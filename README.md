@@ -40,9 +40,9 @@ vite 專案執行開發模式 `npm run dev` 後即會自動監聽，不需要使
 git init # 若已經初始化過就可以不用輸入
 git add .
 git commit -m 'first commit'
-git branch -M main
+git branch -M master
 git remote add origin [GitHub Repositories Url]
-git push -u origin main // 僅限第一次輸入，往後只需要輸入 git push
+git push -u origin master // 僅限第一次輸入，往後只需要輸入 git push
 ```
 
 3. 初始化完畢後，執行 `npm run deploy` 指令進行自動化部署
