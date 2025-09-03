@@ -7,15 +7,16 @@
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
+$gray-100: #F2F2F2 !default;
+$gray-200: #D4D4D4 !default;
 $gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
+$gray-400: #939393 !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #5B5B5B !default;
 $gray-700: #495057 !default;
-$gray-800: #343a40 !default;
+$gray-800: #333333 !default;
 $gray-900: #212529 !default;
+$gray-1000: #212121 !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -310,8 +311,20 @@ $dark:          $gray-900 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
+  "primary-100":    #F6F5F3,
+  "primary-200":    #F3EEE8,
+  "primary-400":    #E8DCCD,
+  "primary-600":    #D0BBA6,
+  "primary-800":    #A08C6F,
+  "primary-1000":   #7A6D5D,
+
+  "secondary-100":  #F1F4F5,
+  "secondary-200":  #E0E9EC,
+  "secondary-400":  #C4D8DE,
+  "secondary-600":  #A1BBC5,
+  "secondary-800":  #6D8388,
+  "secondary-1000": #515F63,
+
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
@@ -378,8 +391,7 @@ $enable-grid-classes:         true !default;
 $enable-container-classes:    true !default;
 $enable-cssgrid:              false !default;
 $enable-button-pointers:      true !default;
-// $enable-rfs:                  true !default;
-$enable-rfs:                  false !default;
+$enable-rfs:                  true !default;
 $enable-validation-icons:     true !default;
 $enable-negative-margins:     false !default;
 $enable-deprecation-messages: true !default;
@@ -410,37 +422,13 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 // scss-docs-start spacer-variables-maps
 $spacer: 1rem !default;
 $spacers: (
-  // 0: 0,
-  // 1: $spacer * .25,
-  // 2: $spacer * .5,
-  // 3: $spacer,
-  // 4: $spacer * 1.5,
-  // 5: $spacer * 3,
   0: 0,
-  1: 0.25rem,   // 4px
-  2: 0.5rem,    // 8px
-  3: 0.75rem,   // 12px
-  4: 1rem,      // 16px
-  5: 1.25rem,   // 20px
-  6: 1.5rem,    // 24px
-  7: 2rem,      // 32px
-  8: 2.5rem,    // 40px
-  9: 3rem,      // 48px
-  10: 4rem,     // 64px
-  11: 5rem,     // 80px
-  12: 6rem,     // 96px
-  13: 8rem      // 128px
-
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
 ) !default;
-
-// 特殊 spacing（用「實際像素」當 key，直覺好記）
-$spacers-special: (
-  52: 3.25rem,  // 52px
-  100: 6.25rem  // 100px
-);
-
-// 合併為最終 $spacers（Bootstrap 會用這個）
-$spacers: map-merge($spacers, $spacers-special) ;
 // scss-docs-end spacer-variables-maps
 
 // Position
@@ -569,8 +557,7 @@ $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-// $border-radius:               .375rem !default;
-$border-radius:               1.25rem !default; //20px
+$border-radius:               .375rem !default;
 $border-radius-sm:            .25rem !default;
 $border-radius-lg:            .5rem !default;
 $border-radius-xl:            1rem !default;
@@ -656,12 +643,11 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-// $h1-font-size:                $font-size-base * 2.5 !default;
-$h1-font-size:                $font-size-base * 4 !default; //64px
-$h2-font-size:                $font-size-base * 2 !default; //32px
-$h3-font-size:                $font-size-base * 1.75 !default; //28px
-$h4-font-size:                $font-size-base * 1.5 !default; //24px
-$h5-font-size:                $font-size-base * 1.25 !default; //20px
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 // scss-docs-end font-variables
 
