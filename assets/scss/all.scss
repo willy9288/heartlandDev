@@ -1,5 +1,7 @@
+//自定義 
 @import "../../node_modules/bootstrap/scss/functions";
-@import './utils/variables';
+@import "./utils/variables";
+@import "./utils/variables-dark";
 @import "../../node_modules/bootstrap";
 
 @import './layout/header.scss';
