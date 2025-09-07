@@ -435,6 +435,7 @@ $spacers: (
 
 // 特殊 spacing（用「實際像素」當 key，直覺好記）
 $spacers-special: (
+  44: 2.75rem, //44px
   52: 3.25rem,  // 52px
   100: 6.25rem  // 100px
 );
@@ -476,7 +477,8 @@ $body-emphasis-color:       $black !default;
 // Style anchor elements.
 
 $link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+// $link-decoration:                         underline !default;
+$link-decoration:                         none !default; //預設沒有下底線
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;
@@ -497,7 +499,8 @@ $icon-link-icon-transform:    translate3d(.25em, 0, 0) !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom:   1rem !default;
+// $paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom:   0 !default; //預設段落0 margin
 
 
 // Grid breakpoints
@@ -572,7 +575,8 @@ $border-color-translucent:    rgba($black, .175) !default;
 // $border-radius:               .375rem !default;
 $border-radius:               1.25rem !default; //20px
 $border-radius-sm:            .25rem !default;
-$border-radius-lg:            .5rem !default;
+// $border-radius-lg:            .5rem !default;
+$border-radius-lg:            6.25rem !default; //100px 按鈕
 $border-radius-xl:            1rem !default;
 $border-radius-xxl:           2rem !default;
 $border-radius-pill:          50rem !default;
@@ -629,7 +633,11 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// 內文（Base）— Noto Sans TC
+$font-family-sans-serif:      "Noto Sans Traditional Chinese", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// 標題（Headings / Display）— Noto Serif TC
+$headings-font-family:      "Noto Serif Traditional Chinese", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
@@ -652,9 +660,11 @@ $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
 
-$line-height-base:            1.5 !default;
+// $line-height-base:            1.5 !default;
+$line-height-base:            1.2 !default; //大部分都1.2
 $line-height-sm:              1.25 !default;
-$line-height-lg:              2 !default;
+// $line-height-lg:              2 !default;
+$line-height-lg:              1.5 !default; //少部分1.5
 
 // $h1-font-size:                $font-size-base * 2.5 !default;
 $h1-font-size:                $font-size-base * 4 !default; //64px
@@ -677,7 +687,8 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+// $headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      $spacer * 0 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
@@ -1217,7 +1228,8 @@ $nav-underline-link-active-color:   var(--#{$prefix}emphasis-color) !default;
 $navbar-padding-y:                  $spacer * .5 !default;
 $navbar-padding-x:                  null !default;
 
-$navbar-nav-link-padding-x:         .5rem !default;
+// $navbar-nav-link-padding-x:         .5rem !default;
+$navbar-nav-link-padding-x:         0.75rem !default; //改成12px
 
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
