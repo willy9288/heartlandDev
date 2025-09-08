@@ -7,15 +7,16 @@
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
+$gray-100: #F2F2F2 !default;
+$gray-200: #D4D4D4 !default;
 $gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
+$gray-400: #939393 !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #5B5B5B !default;
 $gray-700: #495057 !default;
-$gray-800: #343a40 !default;
+$gray-800: #333333 !default;
 $gray-900: #212529 !default;
+$gray-1000: #212121 !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -310,8 +311,20 @@ $dark:          $gray-900 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
+  "primary-100":    #F6F5F3,
+  "primary-200":    #F3EEE8,
+  "primary-400":    #E8DCCD,
+  "primary-600":    #D0BBA6,
+  "primary-800":    #A08C6F,
+  "primary-1000":   #7A6D5D,
+
+  "secondary-100":  #F1F4F5,
+  "secondary-200":  #E0E9EC,
+  "secondary-400":  #C4D8DE,
+  "secondary-600":  #A1BBC5,
+  "secondary-800":  #6D8388,
+  "secondary-1000": #515F63,
+
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
