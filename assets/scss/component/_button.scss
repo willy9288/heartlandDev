@@ -1,5 +1,106 @@
-.btn-cta{
-    --bs-btn-border-radius: 6.25rem;
-    --bs-btn-padding-x: 2rem;
-    --bs-btn-padding-y:0.75rem;
+// .btn-cta {
+//   --bs-btn-border-radius: 6.25rem;
+//   --bs-btn-padding-x: 2rem;
+//   --bs-btn-padding-y: 0.75rem;
+//   --bs-btn-bg: var(--bs-primary-800);
+//   --bs-btn-color: var(--bs-white);
+// }
+
+// 你的設計色：可以跟著變數改
+$cta-bg: var(--bs-primary-800); // #A08C6F（實心底色）
+$cta-text: var(--bs-white);
+$cta-border: var(--bs-primary-800);
+
+$cta-outline-text: var(--bs-primary-800);
+$cta-outline-border: var(--bs-primary-800);
+
+$cta-disabled-bg: var(--bs-gray-200);
+$cta-disabled-text: var(--bs-gray-400);
+$cta-disabled-border: var(--bs-gray-200);
+
+// hover/focus 可以用 shade/tint，沒開 Sass 函數時就先寫死顏色
+$cta-hover-bg: var(--bs-primary-1000); // 你的 Secondary/1000
+$cta-hover-border: var(--bs-primary-1000);
+$cta-focus-ring: rgba(160, 140, 111, 0.35); // primary-800 的半透明
+
+// ---- 封裝：用 BS 的 btn 變數，最穩 ----
+@mixin btn-cta-variables(
+  $color,
+  $bg,
+  $border,
+  $hover-color,
+  $hover-bg,
+  $hover-border,
+  $active-color: $hover-color,
+  $active-bg: $hover-bg,
+  $active-border: $hover-border
+) {
+  --bs-btn-color: #{$color};
+  --bs-btn-bg: #{$bg};
+  --bs-btn-border-color: #{$border};
+  --bs-btn-hover-color: #{$hover-color};
+  --bs-btn-hover-bg: #{$hover-bg};
+  --bs-btn-hover-border-color: #{$hover-border};
+  --bs-btn-active-color: #{$active-color};
+  --bs-btn-active-bg: #{$active-bg};
+  --bs-btn-active-border-color: #{$active-border};
+  --bs-btn-disabled-color: #{$cta-disabled-text};
+  --bs-btn-disabled-bg: #{$cta-disabled-bg};
+  --bs-btn-disabled-border-color: #{$cta-disabled-border};
+
+  --bs-btn-border-radius: 100px; // 你要的超圓角
+  --bs-btn-padding-x: 2rem; // 預設 Large
+  --bs-btn-padding-y: 0.75rem;
+  --bs-btn-font-weight: 600;
+  --bs-btn-font-size: 1.125rem; // 18px（Large）
+  --bs-btn-focus-shadow-rgb: 160, 140, 111; // for fallback
 }
+
+.btn-cta {
+  @include btn-cta-variables(
+    $cta-text,
+    $cta-bg,
+    $cta-border,
+    $cta-text,
+    $cta-hover-bg,
+    $cta-hover-border
+  );
+
+  // focus ring
+  &:focus-visible {
+    box-shadow: 0 0 0 0.25rem #{$cta-focus-ring};
+  }
+}
+
+// 線框版
+.btn-cta-outline {
+  @include btn-cta-variables(
+    $cta-outline-text,
+    transparent,
+    $cta-outline-border,
+    #fff,
+    $cta-hover-bg,
+    $cta-hover-border
+  );
+  // 線框版 hover/active 文字改白
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+}
+
+// 尺寸：Large / Medium / Small
+// (依你的 Figma：Large 100px radius、Hug 176x54、padding 12/40/12/40，這裡用近似數字)
+.btn-cta-lg {
+  --bs-btn-padding-x: 2.5rem;
+  --bs-btn-padding-y: 0.75rem;
+  --bs-btn-font-size: 1.125rem;
+} // 18px
+.btn-cta-md {
+  --bs-btn-padding-x: 2rem;
+  --bs-btn-padding-y: 0.625rem;
+  --bs-btn-font-size: 1rem;
+} // 16px
+.btn-cta-sm {
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-font-size: 0.875rem;
+} // 14px
