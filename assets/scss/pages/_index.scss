@@ -1,3 +1,36 @@
-.index-title {
-  font-size: 100px;
+.banner {
+  // height: 100vh;
+  // padding: 100px 0;
+  /* 預設用 clamp：小螢幕時比較友善 */
+  min-height: clamp(60svh, 80svh, 100svh);
+  padding: clamp(48px, 6vw, 100px) 0;
+
+  position: relative;
+  background-image: url("../images/Banner.png");
+  background-size: cover;
+  background-position: center;
+
+  &-title {
+    letter-spacing: 0.16em;
+  }
+
+  &-curve {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px; // 壓一點點避免縫線
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+  }
+}
+
+/* 大螢幕（例如桌機）才強制滿版與固定內距 */
+@media (min-width: 1024px) {
+  .banner {
+    min-height: unset;
+    height: 100vh;
+    padding: 100px 0;
+  }
 }
