@@ -8,4 +8,24 @@ $utilities: map-merge(
   )
 );
 
+// _utilities.scss
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      ( responsive: true )
+    )
+  )
+);
+
+// 直接迭代 $grays 產生 utilities
+@each $name, $val in $grays {
+  .text-gray-#{$name}   { color: $val !important; }
+  .bg-gray-#{$name}     { background-color: $val !important; }
+  .border-gray-#{$name} { border-color: $val !important; }
+}
+
+
 @import "bootstrap/scss/utilities/api";
