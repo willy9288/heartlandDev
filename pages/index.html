@@ -7,6 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
@@ -46,7 +50,12 @@
           /></a>
         </div>
       </div>
-      <img src="../assets/images/Subtract.svg" alt="" aria-hidden="true" class="banner-curve">
+      <img
+        src="../assets/images/Subtract.svg"
+        alt=""
+        aria-hidden="true"
+        class="banner-curve"
+      />
     </section>
 
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -116,8 +125,73 @@
 
     <!-- Modal 按鈕 -->
 
+    <section class="photo py-100 bg-primary-100">
+      <div class="container text-center">
+        <h2 class="photo-title h2 fw-bold mb-52">看看我們的空間</h2>
+
+        <!-- Swiper -->
+        <div class="swiper photo-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/寬敞的迎賓空間.png"
+                  alt="寬敞的迎賓空間"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">寬敞的迎賓空間</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/自然採光的舒適環境.png"
+                  alt="自然採光的舒適環境"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">自然採光的舒適環境</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/明亮舒適的諮商空間.png"
+                  alt="明亮舒適的諮商室"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">明亮舒適的諮商室</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/environment1.png"
+                  alt="柔和的光影氛圍"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">柔和的光影氛圍</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/environment3.png"
+                  alt="純淨的雅緻空間"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">純淨的雅緻空間</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 導航按鈕，放在 swiper 外面 -->
+        <div class="photo-nav d-flex gap-4 mt-6">
+           <!-- 導航按鈕 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>
