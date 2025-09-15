@@ -450,6 +450,7 @@ $spacers: (
 $spacers-special: (
   44: 2.75rem, //44px
   52: 3.25rem,  // 52px
+  60: 3.75rem, //60px
   100: 6.25rem  // 100px
 );
 
@@ -648,9 +649,9 @@ $aspect-ratios: (
 // stylelint-disable value-keyword-case
 // $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 // 內文（Base）— Noto Sans TC
-$font-family-sans-serif:      "Noto Sans Traditional Chinese", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      "Noto Sans TC", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 // 標題（Headings / Display）— Noto Serif TC
-$headings-font-family:      "Noto Serif Traditional Chinese", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$headings-font-family:      "Noto Serif TC", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
@@ -686,6 +687,7 @@ $h3-font-size:                $font-size-base * 1.75 !default; //28px
 $h4-font-size:                $font-size-base * 1.5 !default; //24px
 $h5-font-size:                $font-size-base * 1.25 !default; //20px
 $h6-font-size:                $font-size-base !default;
+$h7-font-size:                $font-size-base * 0.875 !default; //14px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -695,7 +697,8 @@ $font-sizes: (
   3: $h3-font-size,
   4: $h4-font-size,
   5: $h5-font-size,
-  6: $h6-font-size
+  6: $h6-font-size,
+  7: $h7-font-size
 ) !default;
 // scss-docs-end font-sizes
 
@@ -1248,8 +1251,10 @@ $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
 $navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;
-$navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) * .5 !default;
-$navbar-brand-margin-end:           1rem !default;
+// $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) * .5 !default;
+$navbar-brand-padding-y:            0 !default;
+// $navbar-brand-margin-end:           1rem !default;
+$navbar-brand-margin-end:           0 !default;
 
 $navbar-toggler-padding-y:          .25rem !default;
 $navbar-toggler-padding-x:          .75rem !default;
