@@ -119,3 +119,80 @@
     margin: 0; // 移除內建 margin
   }
 }
+
+// 輪播區
+.bgbrown200{
+  background-color: #F3EEE8 ;
+}
+
+.textSerifTC {
+  font-family:"Noto Serif TC", serif;
+}
+
+.hero-section-gradient {  
+  min-height: 400px;
+  padding: 2rem;  
+  background-image:    
+    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),    
+    url('../assets/images/背景牛皮.jpg');    
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-section {
+  padding-top: 257.5px;
+  padding-bottom: 329px;
+  background-image:
+  linear-gradient(rgba(34, 70, 87, 0.6), rgba(34, 70, 87, 0.6)),
+  url(../assets/images/Bannernocolor.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+@media (max-width:768px){
+  .hero-section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image:
+    linear-gradient(rgba(34, 70, 87, 0.4), rgba(34, 70, 87, 0.4)),
+    url(../assets/images/Bannernocolor.png);
+  }
+}
+
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 36px; 
+  }
+}
+
+
+.scroll-card {
+  width: 526px;
+}
+
+@media (max-width: 768px) {    
+  #scrollContainer {    
+    scroll-snap-type: x mandatory;    
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  #scrollContainer::-webkit-scrollbar {
+    display: none;
+  }  
+  .scroll-card {    
+    width: 100%;    
+    scroll-snap-align: center;
+  }
+}
+
+.custom-hover:hover {
+  background-color: #A08C6F !important;
+  color: white !important;
+}
+
+.custom-hover:active {
+  background-color: #7A6D5D;
+  border-color: #7A6D5D;
+  transform: scale(0.95);  
+}
