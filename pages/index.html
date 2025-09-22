@@ -57,137 +57,8 @@
         class="banner-curve"
       />
     </section>
-
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary-100">Primary100</button>
-    <button type="button" class="btn btn-primary-400">Primary400</button>
-    <button type="button" class="btn btn-primary-1000">Primary1000</button>
-    <button type="button" class="btn btn-secondary-100">Secondary100</button>
-    <button type="button" class="btn btn-secondary-400">Secondary400</button>
-    <button type="button" class="btn btn-secondary-800">Secondary800</button>
-    <button type="button" class="btn btn-secondary-1000">Secondary1000</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-
-    <button type="button" class="btn btn-link">Link</button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              關閉
-            </button>
-            <button type="button" class="btn btn-primary">確定</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h1 class="index-title">我是首頁</h1>
-
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/dog.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit,
-          iusto odio assumenda alias id nobis earum!
-        </p>
-      </div>
-    </div>
-
-    <!-- Modal 按鈕 -->
-
-    <section class="photo py-100 bg-primary-100">
-      <div class="container text-center">
-        <h2 class="photo-title h2 fw-bold mb-52">看看我們的空間</h2>
-
-        <!-- Swiper -->
-        <div class="swiper photo-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="photo-item text-start">
-                <img
-                  src="../assets/images/寬敞的迎賓空間.png"
-                  alt="寬敞的迎賓空間"
-                />
-                <h6 class="mt-4 fs-4 fw-bold">寬敞的迎賓空間</h6>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="photo-item text-start">
-                <img
-                  src="../assets/images/自然採光的舒適環境.png"
-                  alt="自然採光的舒適環境"
-                />
-                <h6 class="mt-4 fs-4 fw-bold">自然採光的舒適環境</h6>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="photo-item text-start">
-                <img
-                  src="../assets/images/明亮舒適的諮商空間.png"
-                  alt="明亮舒適的諮商室"
-                />
-                <h6 class="mt-4 fs-4 fw-bold">明亮舒適的諮商室</h6>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="photo-item text-start">
-                <img
-                  src="../assets/images/environment1.png"
-                  alt="柔和的光影氛圍"
-                />
-                <h6 class="mt-4 fs-4 fw-bold">柔和的光影氛圍</h6>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="photo-item text-start">
-                <img
-                  src="../assets/images/environment3.png"
-                  alt="純淨的雅緻空間"
-                />
-                <h6 class="mt-4 fs-4 fw-bold">純淨的雅緻空間</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 導航按鈕，放在 swiper 外面 -->
-        <div class="photo-nav d-flex gap-4 mt-6">
-           <!-- 導航按鈕 -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
-    </section>
+ <%- include('./layout/serve'); -%>
+  
     <!-- 輪播區 -->
     <section class="hero-section-gradient px-0 py-0" >
       <div class="container mx-lg-auto py-lg-12 py-9" style="padding-top: 100px; padding-bottom: 100px;">
@@ -301,6 +172,70 @@
       </div>
     </section>
 
+    <!-- 環境 -->
+ <section class="photo py-100 bg-primary-100">
+      <div class="container text-center">
+        <h2 class="photo-title h2 fw-bold mb-52">看看我們的空間</h2>
+
+        <!-- Swiper -->
+        <div class="swiper photo-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/寬敞的迎賓空間.png"
+                  alt="寬敞的迎賓空間"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">寬敞的迎賓空間</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/自然採光的舒適環境.png"
+                  alt="自然採光的舒適環境"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">自然採光的舒適環境</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/明亮舒適的諮商空間.png"
+                  alt="明亮舒適的諮商室"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">明亮舒適的諮商室</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/environment1.png"
+                  alt="柔和的光影氛圍"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">柔和的光影氛圍</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="../assets/images/environment3.png"
+                  alt="純淨的雅緻空間"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">純淨的雅緻空間</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 導航按鈕，放在 swiper 外面 -->
+        <div class="photo-nav d-flex gap-4 mt-6">
+           <!-- 導航按鈕 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
