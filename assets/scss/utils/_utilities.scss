@@ -27,5 +27,42 @@ $utilities: map-merge(
   .border-gray-#{$name} { border-color: $val !important; }
 }
 
+// 服務項目自訂通用樣式
+
+.ser-ill-container{
+  width: 636px;
+  height: auto;
+}
+
+.mb-6{
+  margin-bottom: 6px;
+}
+.mb-12{
+  margin-bottom: 12px;
+}
+
+.py-20{
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.mb-24{
+  margin-bottom: 24px;
+}
+.mb-48{
+  margin-bottom: 48px;
+}
+.m-100
+{
+  margin-top: 100px;
+}
+
+.mb-52{
+  margin-bottom: 52px;
+}
+
+.gy-4px {
+  --bs-gutter-y: 4px;
+}
+
 
 @import "bootstrap/scss/utilities/api";
