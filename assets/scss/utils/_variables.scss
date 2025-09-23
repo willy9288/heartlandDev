@@ -422,12 +422,26 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 // scss-docs-start spacer-variables-maps
 $spacer: 1rem !default;
 $spacers: (
+// 0: 0,
+  // 1: $spacer * .25,
+  // 2: $spacer * .5,
+  // 3: $spacer,
+  // 4: $spacer * 1.5,
+  // 5: $spacer * 3,
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: 0.25rem,   // 4px
+  2: 0.5rem,    // 8px
+  3: 0.75rem,   // 12px
+  4: 1rem,      // 16px
+  5: 1.25rem,   // 20px
+  6: 1.5rem,    // 24px
+  7: 2rem,      // 32px
+  8: 2.5rem,    // 40px
+  9: 3rem,      // 48px
+  10: 4rem,     // 64px
+  11: 5rem,     // 80px
+  12: 6rem,     // 96px
+  13: 8rem      // 128px
 ) !default;
 
 // 特殊 spacing（用「實際像素」當 key，直覺好記）
