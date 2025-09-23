@@ -1,0 +1,28 @@
+.sheena-list{
+/* 移除瀏覽器預設的圓點和內邊距 */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+
+.sheena-list li {
+  /* 設定相對定位，讓偽元素的絕對定位能參考到它 */
+  position: relative;
+  /* 增加左側內邊距，為自訂圓點留出空間 */
+  padding-left: 1.75em; 
+}
+
+.sheena-list li::before {
+  /* 插入一個實心圓點的 Unicode 字元 */
+  content: '•';
+  /* 絕對定位，讓圓點可以精確地放在列表項目的左側 */
+  position: absolute;
+  top: 0.08em; 
+  left: 0.5em; 
+  
+  /* 調整圓點的大小 */
+  font-size: 1em;
+  
+}
