@@ -34,12 +34,7 @@ $utilities: map-merge(
   height: auto;
 }
 
-.mb-6{
-  margin-bottom: 6px;
-}
-.mb-12{
-  margin-bottom: 12px;
-}
+
 
 .py-20{
   padding-bottom: 20px;
@@ -65,5 +60,18 @@ $utilities: map-merge(
   --bs-gutter-y: 4px;
 }
 
+// 文字設定
+
+.custom-line-height-30 {
+  line-height: 30px;}
+
+.letter-spacing-22{
+  letter-spacing: 2.2px;
+}
+
+// 色塊圓角
+
+.custom-rounded-20 {
+  border-radius: 20px;}
 
 @import "bootstrap/scss/utilities/api";
