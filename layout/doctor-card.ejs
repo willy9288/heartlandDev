@@ -1,0 +1,15 @@
+<!-- layout/doctor-card.ejs -->
+<div class="doctor-card">
+    <div class="doctor-avatar <%= doctor.gender %>">
+        <% if (doctor.photo) { %>
+            <img src="<%= doctor.photo %>" alt="<%= doctor.name %>">
+        <% } else { %>
+            <%= doctor.gender === 'male' ? '👨‍⚕️' : '👩‍⚕️' %>
+        <% } %>
+    </div>
+    <div class="doctor-name"><%= doctor.name %></div>
+    <div class="doctor-title"><%= doctor.title %></div>
+    <p class="doctor-description"><%= doctor.description %></p>
+    <div class="doctor-specialties"><%= doctor.specialties %></div>
+    <button class="appointment-btn" onclick="showDoctorDetail('<%= doctor.id %>')">立即預約</button>
+</div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= doctor ? doctor.name + ' - ' + doctor.title : '醫師詳細資訊' %> - 心靈驛站諮商所</title>
+    <link rel="stylesheet" href="./main.css">
+    <% if (doctor) { %>
+    <meta name="description" content="<%= doctor.name %><%= doctor.title %>，專長：<%= doctor.specialties %>。立即了解詳細資訊並預約諮商。">
+    <% } %>
+</head>
+<body>
+    <%- include('../layout/header.ejs', { currentPage: 'doctors' }) %>
+    
+    <div class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">首頁</a> > 
+                <% if (doctor) { %>
+                    <% if (category === 'adult') { %><a href="/doctors-adult">成人個別諮商</a><% } %>
+                    <% if (category === 'couple') { %><a href="/doctors-couple">伴侶諮商</a><% } %>
+                    <% if (category === 'child') { %><a href="/doctors-child">兒童青少年</a><% } %>
+                    > <span><%= doctor.name %></span>
+                <% } else { %>
+                    <span>醫師詳細資訊</span>
+                <% } %>
+            </nav>
+            <% if (doctor) { %>
+            <h1 class="page-title"><%= doctor.name %> <%= doctor.title %></h1>
+            <p class="page-subtitle"><%= doctor.specialties %></p>
+            <% } else { %>
+            <h1 class="page-title">醫師資訊不存在</h1>
+            <% } %>
+        </div>
+    </div>
+    
+    <% if (doctor) { %>
+    <section class="doctor-detail-section">
+        <div class="container">
+            <%- include('../layout/doctor-detail-layout.ejs', { doctor: doctor }) %>
+        </div>
+    </section>
+    <% } else { %>
+    <section class="error-section">
+        <div class="container">
+            <div class="error-content">
+                <h2>抱歉，找不到該醫師的資訊</h2>
+                <p>您要查找的醫師資訊可能不存在或已被移除。</p>
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary">返回首頁</a>
+                    <a href="/doctors-adult" class="btn btn-outline">瀏覽醫師</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% } %>
+    
+    <%- include('../layout/footer.ejs') %>
+    
+    <script src="./assets/js/doctors.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
