@@ -195,79 +195,43 @@
     </section>
 
     <!-- 諮商團隊 -->
-     <section class="doctor-team-section">
-        <div class="decorative-plant plant-left"></div>
-        <div class="decorative-plant plant-right"></div>
-
-        <h2 class="section-title">專業醫療團隊</h2>
-        
-        <div class="doctors-grid">
-            <!-- 醫師卡片 1 -->
-            <div class="doctor-card">
-                <div class="doctor-avatar male">👨‍⚕️</div>
-                <div class="doctor-name">陳醫師</div>
-                <div class="doctor-title">主治醫師</div>
-                <p class="doctor-description">
-                    專精於內科與家醫科診療，擅長慢性疾病管理與預防醫學。
-                </p>
-                <div class="doctor-specialties">內科 | 家醫科 | 預防醫學</div>
-                <button class="appointment-btn">立即預約</button>
+     <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>專業諮商服務</h2>
+                <p>我們提供多元化的心理諮商服務，滿足不同年齡層與需求的個案</p>
             </div>
             
-            <!-- 醫師卡片 2 -->
-            <div class="doctor-card">
-                <div class="doctor-avatar male">👨‍⚕️</div>
-                <div class="doctor-name">陳醫師</div>
-                <div class="doctor-title">主治醫師</div>
-                <p class="doctor-description">
-                    專精於內科與家醫科診療，擅長慢性疾病管理與預防醫學。
-                </p>
-                <div class="doctor-specialties">內科 | 家醫科 | 預防醫學</div>
-                <button class="appointment-btn">立即預約</button>
-            </div>
-            <!-- 醫師卡片 3 -->
-            <div class="doctor-card">
-                <div class="doctor-avatar male">👨‍⚕️</div>
-                <div class="doctor-name">陳醫師</div>
-                <div class="doctor-title">主治醫師</div>
-                <p class="doctor-description">
-                    專精於內科與家醫科診療，擅長慢性疾病管理與預防醫學。
-                </p>
-                <div class="doctor-specialties">內科 | 家醫科 | 預防醫學</div>
-                <button class="appointment-btn">立即預約</button>
-            </div>
-            <!-- 醫師卡片 4 -->
-            <div class="doctor-card">
-                <div class="doctor-avatar male">👨‍⚕️</div>
-                <div class="doctor-name">陳醫師</div>
-                <div class="doctor-title">主治醫師</div>
-                <p class="doctor-description">
-                    專精於內科與家醫科診療，擅長慢性疾病管理與預防醫學。
-                </p>
-                <div class="doctor-specialties">內科 | 家醫科 | 預防醫學</div>
-                <button class="appointment-btn">立即預約</button>
-            </div>
-            <!-- 醫師卡片 5 -->
-            <div class="doctor-card">
-                <div class="doctor-avatar male">👨‍⚕️</div>
-                <div class="doctor-name">陳醫師</div>
-                <div class="doctor-title">主治醫師</div>
-                <p class="doctor-description">
-                    專精於內科與家醫科診療，擅長慢性疾病管理與預防醫學。
-                </p>
-                <div class="doctor-specialties">內科 | 家醫科 | 預防醫學</div>
-                <button class="appointment-btn">立即預約</button>
-            </div>
-            <!-- 醫師卡片 6 -->
-            <div class="doctor-card">
-                <div class="doctor-avatar male">👨‍⚕️</div>
-                <div class="doctor-name">陳醫師</div>
-                <div class="doctor-title">主治醫師</div>
-                <p class="doctor-description">
-                    專精於內科與家醫科診療，擅長慢性疾病管理與預防醫學。
-                </p>
-                <div class="doctor-specialties">內科 | 家醫科 | 預防醫學</div>
-                <button class="appointment-btn">立即預約</button>
+            <div class="services-grid">
+                <%
+                const services = [
+                    {
+                        key: 'adult',
+                        title: '成人個別諮商',
+                        description: '提供個人心理諮商服務，協助您面對生活中的各種挑戰與困擾，找回內心的平衡與力量。',
+                        icon: '🧑‍⚕️',
+                        doctorCount: 3
+                    },
+                    {
+                        key: 'couple',
+                        title: '伴侶諮商',
+                        description: '專業的伴侶關係諮商，幫助情侶或夫妻改善溝通，重建信任，共同成長。',
+                        icon: '👫',
+                        doctorCount: 3
+                    },
+                    {
+                        key: 'child',
+                        title: '兒童青少年',
+                        description: '針對兒童與青少年的發展需求，提供專業的心理支持與輔導服務。',
+                        icon: '👶',
+                        doctorCount: 3
+                    }
+                ];
+                %>
+                
+                <% services.forEach(function(category) { %>
+                    <%- include('./layout/doctor-category-card.ejs', { category: category }) %>
+                <% }); %>
             </div>
         </div>
     </section>

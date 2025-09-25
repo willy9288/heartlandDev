@@ -8,7 +8,7 @@
     <meta name="description" content="專業的成人個別心理諮商服務，協助您處理焦慮、憂鬱、情緒管理等議題。">
 </head>
 <body>
-    <%- include('../layout/header.ejs', { currentPage: 'doctors' }) %>
+    <%- include('./layout/header.ejs', { currentPage: 'doctors' }) %>
     
     <div class="page-header">
         <div class="container">
@@ -58,7 +58,7 @@
                 %>
                 
                 <% adultDoctors.forEach(function(doctor) { %>
-                    <%- include('../layout/doctor-card.ejs', { doctor: doctor }) %>
+                    <%- include('./layout/doctor-card.ejs', { doctor: doctor }) %>
                 <% }); %>
             </div>
             
@@ -86,7 +86,7 @@
         </div>
     </section>
     
-    <%- include('../layout/footer.ejs') %>
+    <%- include('./layout/footer.ejs') %>
     
     <script src="./main.js"></script>
 </body>

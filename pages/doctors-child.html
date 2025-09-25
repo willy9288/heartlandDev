@@ -8,7 +8,7 @@
     <meta name="description" content="專業的兒童與青少年心理諮商服務，運用遊戲治療等方式協助孩子健康成長。">
 </head>
 <body>
-    <%- include('../layout/header.ejs', { currentPage: 'doctors' }) %>
+    <%- include('./layout/header.ejs', { currentPage: 'doctors' }) %>
     
     <div class="page-header">
         <div class="container">
@@ -57,7 +57,7 @@
                 %>
                 
                 <% childDoctors.forEach(function(doctor) { %>
-                    <%- include('../layout/doctor-card.ejs', { doctor: doctor }) %>
+                    <%- include('./layout/doctor-card.ejs', { doctor: doctor }) %>
                 <% }); %>
             </div>
             
@@ -85,7 +85,7 @@
         </div>
     </section>
     
-    <%- include('../layout/footer.ejs') %>
+    <%- include('./layout/footer.ejs') %>
     
     <script src="./main.js"></script>
 </body>

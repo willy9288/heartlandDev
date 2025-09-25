@@ -3,61 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= doctor ? doctor.name + ' - ' + doctor.title : '醫師詳細資訊' %> - 心靈驛站諮商所</title>
-    <link rel="stylesheet" href="./main.css">
-    <% if (doctor) { %>
-    <meta name="description" content="<%= doctor.name %><%= doctor.title %>，專長：<%= doctor.specialties %>。立即了解詳細資訊並預約諮商。">
-    <% } %>
+    <title>陳怡文 - 諮商心理師 - 心靈驛站諮商所</title>
+    <link rel="stylesheet" href="../main.css">
 </head>
 <body>
-    <%- include('../layout/header.ejs', { currentPage: 'doctors' }) %>
+    <%- include('./layout/header.ejs') %>
     
     <div class="page-header">
         <div class="container">
             <nav class="breadcrumb">
-                <a href="/">首頁</a> > 
-                <% if (doctor) { %>
-                    <% if (category === 'adult') { %><a href="/doctors-adult">成人個別諮商</a><% } %>
-                    <% if (category === 'couple') { %><a href="/doctors-couple">伴侶諮商</a><% } %>
-                    <% if (category === 'child') { %><a href="/doctors-child">兒童青少年</a><% } %>
-                    > <span><%= doctor.name %></span>
-                <% } else { %>
-                    <span>醫師詳細資訊</span>
-                <% } %>
+                <a href="index.html">首頁</a> > 
+                <a href="doctors-adult.html">成人個別諮商</a> > 
+                <span>陳怡文</span>
             </nav>
-            <% if (doctor) { %>
-            <h1 class="page-title"><%= doctor.name %> <%= doctor.title %></h1>
-            <p class="page-subtitle"><%= doctor.specialties %></p>
-            <% } else { %>
-            <h1 class="page-title">醫師資訊不存在</h1>
-            <% } %>
+            <h1 class="page-title">陳怡文 諮商心理師</h1>
+            <p class="page-subtitle">焦慮症 | 憂鬱症 | 情緒管理</p>
         </div>
     </div>
     
-    <% if (doctor) { %>
     <section class="doctor-detail-section">
         <div class="container">
-            <%- include('../layout/doctor-detail-layout.ejs', { doctor: doctor }) %>
-        </div>
-    </section>
-    <% } else { %>
-    <section class="error-section">
-        <div class="container">
-            <div class="error-content">
-                <h2>抱歉，找不到該醫師的資訊</h2>
-                <p>您要查找的醫師資訊可能不存在或已被移除。</p>
-                <div class="error-actions">
-                    <a href="/" class="btn btn-primary">返回首頁</a>
-                    <a href="/doctors-adult" class="btn btn-outline">瀏覽醫師</a>
+            <div class="doctor-detail">
+                <div class="doctor-profile">
+                    <div class="profile-avatar female">👩‍⚕️</div>
+                    
+                    <div class="profile-info">
+                        <h1>陳怡文</h1>
+                        <div class="title">諮商心理師</div>
+                        
+                        <table class="info-table">
+                            <tr>
+                                <td>學歷</td>
+                                <td>國立台灣師範大學心理與輔導研究所碩士</td>
+                            </tr>
+                            <tr>
+                                <td>證照</td>
+                                <td>諮商心理師證照字號：心理字第000123號</td>
+                            </tr>
+                            <tr>
+                                <td>經歷</td>
+                                <td>8年臨床經驗，累計諮商時數超過3000小時</td>
+                            </tr>
+                            <tr>
+                                <td>專長</td>
+                                <td>焦慮症、憂鬱症、情緒管理、壓力調適</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="profile-sections">
+                    <div class="section">
+                        <h3>專業理念</h3>
+                        <div class="section-content">
+                            我相信每個人都擁有內在的力量與智慧，能夠面對生活中的挑戰。在諮商的過程中，我會以同理心與專業知識，陪伴您探索內在世界，找到屬於自己的解決方案。
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>治療方式</h3>
+                        <div class="section-content">
+                            <ul>
+                                <li>認知行為治療 (CBT)</li>
+                                <li>個人中心治療法</li>
+                                <li>正念治療</li>
+                                <li>敘事治療</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>專業資格</h3>
+                        <div class="section-content">
+                            <ul>
+                                <li>諮商心理師執業執照</li>
+                                <li>中華民國諮商心理師公會全國聯合會會員</li>
+                                <li>認知行為治療專業訓練結業</li>
+                                <li>創傷知情照護訓練證書</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 簡化的展示用預約表單 -->
+            <div class="appointment-form">
+                <h3 class="form-title">預約 陳怡文 的諮商</h3>
+                <p class="form-notice">此為展示版本，表單僅供視覺參考</p>
+                
+                <form class="demo-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" placeholder="請輸入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>聯絡電話 *</label>
+                            <input type="tel" placeholder="請輸入您的電話">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" placeholder="請輸入您的Email">
+                        </div>
+                        <div class="form-group">
+                            <label>年齡</label>
+                            <input type="number" placeholder="請輸入年齡">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>希望預約日期 *</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>希望時段 *</label>
+                            <select>
+                                <option value="">請選擇時段</option>
+                                <option value="morning">上午 (09:00-12:00)</option>
+                                <option value="afternoon">下午 (14:00-17:00)</option>
+                                <option value="evening">晚上 (18:00-21:00)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>諮商主題或希望討論的議題</label>
+                        <textarea rows="4" placeholder="請簡述您希望討論的主題或困擾（可選填）"></textarea>
+                    </div>
+                    
+                    <button type="button" class="submit-btn demo-btn">送出預約（展示用）</button>
+                </form>
+                
+                <div class="appointment-notice">
+                    <h4>預約須知：</h4>
+                    <ul>
+                        <li>預約送出後，我們將在24小時內與您聯繫確認</li>
+                        <li>初次諮商建議提前15分鐘到達</li>
+                        <li>如需取消或更改預約，請提前48小時告知</li>
+                        <li>諮商費用請於現場繳交</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    <% } %>
     
-    <%- include('../layout/footer.ejs') %>
-    
-    <script src="./assets/js/doctors.js"></script>
-    <script src="./main.js"></script>
+    <%- include('./layout/footer.ejs') %>
 </body>
 </html>
