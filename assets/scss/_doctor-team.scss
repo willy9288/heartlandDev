@@ -1,0 +1,331 @@
+// ===== 醫師團隊主要區塊 =====
+.doctor-team-section {
+  background-color: var(--bs-primary-100) !important;
+  display: block !important;
+  visibility: visible !important;
+  
+  // 使用專案既有的 spacing 系統
+  padding: 6.25rem 0 !important; // 100px
+
+  // 響應式調整
+  @media (max-width: 768px) {
+    padding: 3.75rem 0 !important; // 60px
+  }
+}
+
+// ===== 確保容器顯示 =====
+.doctor-team-section .container {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.doctor-team-section .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  visibility: visible !important;
+}
+
+// ===== 區塊標題樣式 =====
+.doctor-team-section .section-title {
+  // 使用專案既有的字體設定
+  font-size: 2.5rem !important; // display-6
+  color: var(--bs-primary-1000) !important;
+  letter-spacing: 0.16em !important; // 參考 banner-title
+  font-family: "Noto Serif TC", serif !important;
+  font-weight: 500 !important;
+  display: block !important;
+  visibility: visible !important;
+
+  // 響應式調整
+  @media (max-width: 768px) {
+    font-size: 2.25rem !important; // 稍微小一點
+  }
+}
+
+// ===== 醫師卡片樣式 =====
+.doctor-card {
+  background: var(--bs-white) !important;
+  padding: 1.5rem !important; // 24px
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 1.25rem !important; // 20px 圓角
+  visibility: visible !important;
+
+  // 頂部漸層線條
+  &::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--bs-primary-800), var(--bs-primary-600)) !important;
+  }
+
+  // hover 效果 - 使用專案既有的 custom-hover
+  &:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  // 小螢幕調整
+  @media (max-width: 768px) {
+    padding: 1.25rem !important; // 20px
+  }
+}
+
+// ===== 醫師頭像 =====
+.doctor-avatar {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--bs-primary-200), var(--bs-primary-400)) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 4px solid var(--bs-white) !important;
+  box-shadow: 0 4px 15px rgba(160, 140, 111, 0.15) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  visibility: visible !important;
+
+  // emoji 樣式
+  .doctor-emoji {
+    font-size: 3rem !important;
+    color: var(--bs-primary-800) !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  // 真實照片樣式
+  .doctor-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+
+  // 小螢幕調整
+  @media (max-width: 768px) {
+    width: 100px !important;
+    height: 100px !important;
+
+    .doctor-emoji {
+      font-size: 2.5rem !important;
+    }
+  }
+}
+
+// ===== 醫師資訊 =====
+.doctor-name {
+  font-size: 1.5rem !important; // h4 size
+  font-weight: 500 !important;
+  color: var(--bs-primary-1000) !important;
+  letter-spacing: 0.12em !important; // 參考 photo h6 的設定
+  font-family: "Noto Serif TC", serif !important;
+  display: block !important;
+  visibility: visible !important;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem !important; // h5 size
+  }
+}
+
+.doctor-title {
+  font-size: 1rem !important;
+  color: var(--bs-primary-800) !important;
+  font-weight: 500 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+// ===== 專長列表 - 使用專案既有的 sheena-list =====
+.doctor-specialties {
+  display: block !important;
+  visibility: visible !important;
+
+  .sheena-list {
+    display: block !important;
+    visibility: visible !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    li {
+      font-size: 0.875rem !important; // 14px
+      color: var(--bs-gray-600) !important;
+      line-height: 1.5 !important;
+      display: list-item !important;
+      visibility: visible !important;
+      position: relative !important;
+      padding-left: 1.75em !important;
+      margin-bottom: 0.5rem !important;
+
+      // 覆蓋原始樣式的圓點顏色
+      &::before {
+        content: '•' !important;
+        position: absolute !important;
+        top: 0.08em !important;
+        left: 0.5em !important;
+        font-size: 1em !important;
+        color: var(--bs-primary-800) !important;
+      }
+    }
+  }
+}
+
+// ===== 預約按鈕 - 完全使用專案的 btn-cta =====
+.doctor-card .btn-cta {
+  // 確保按鈕在卡片底部
+  margin-top: auto !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  
+  // 如果需要調整圓角，使用專案設定
+  border-radius: 6.25rem !important; // 100px
+}
+
+// ===== 測試用：強制顯示 =====
+// 如果上面的方法還是不行，加入這個緊急修正
+.doctor-team-section * {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.doctor-team-section .row {
+  display: flex !important;
+}
+
+.doctor-team-section .col-lg-4,
+.doctor-team-section .col-md-6 {
+  display: block !important;
+  flex: 0 0 auto !important;
+}
+
+// ===== 與專案背景整合 =====
+// 如果在不同背景區塊中使用
+.bgbrown200 .doctor-team-section {
+  background-color: transparent; // 透明背景，使用父層背景
+
+  .doctor-card {
+    background: var(--bs-white);
+    // 增加一點陰影對比
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// hero-section 中使用的版本
+.hero-section .doctor-team-section {
+  background: transparent;
+  
+  .section-title,
+  .section-subtitle {
+    color: var(--bs-white); // 白色文字
+  }
+
+  .doctor-card {
+    background: rgba(255, 255, 255, 0.95); // 半透明白色背景
+    backdrop-filter: blur(10px); // 毛玻璃效果
+  }
+}
+
+// ===== 輪播版本（如果需要） =====
+.doctor-carousel {
+  .doctor-card {
+    // 調整卡片在輪播中的樣式
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  // 可以整合專案的 Swiper 按鈕樣式
+  .swiper-button-next,
+  .swiper-button-prev {
+    // 使用專案既有的按鈕樣式
+    color: var(--bs-primary-800);
+    
+    &:hover {
+      background-color: var(--bs-primary-800);
+      color: var(--bs-white);
+    }
+  }
+}
+
+// ===== 特殊版本：橫向卡片 =====
+.doctor-card-horizontal {
+  display: flex;
+  align-items: center;
+  text-align: left;
+
+  .doctor-avatar {
+    margin-right: 1.5rem; // 24px
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .doctor-info {
+    text-align: left;
+  }
+
+  .btn-cta {
+    align-self: flex-start;
+    width: auto;
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    .doctor-avatar {
+      margin-right: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .doctor-info {
+      text-align: center;
+    }
+
+    .btn-cta {
+      width: 100%;
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+// ===== 響應式網格調整 =====
+// 配合專案的 Bootstrap grid 系統
+@media (max-width: 767.98px) {
+  .doctor-team-section .col-md-6 {
+    margin-bottom: 1.5rem; // 24px
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ===== 載入動畫（選用） =====
+.doctor-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  // 延遲動畫
+  &:nth-child(1) { transition-delay: 0.1s; }
+  &:nth-child(2) { transition-delay: 0.2s; }
+  &:nth-child(3) { transition-delay: 0.3s; }
+  &:nth-child(4) { transition-delay: 0.4s; }
+  &:nth-child(5) { transition-delay: 0.5s; }
+  &:nth-child(6) { transition-delay: 0.6s; }
+}
