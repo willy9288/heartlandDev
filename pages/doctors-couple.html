@@ -1,92 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>伴侶諮商 - 心靈驛站諮商所</title>
-    <link rel="stylesheet" href="./main.css">
-    <meta name="description" content="專業的伴侶關係諮商服務，協助情侶和夫妻改善溝通，重建親密關係。">
-</head>
-<body>
-    <%- include('./layout/header.ejs', { currentPage: 'doctors' }) %>
-    
-    <div class="page-header">
-        <div class="container">
-            <nav class="breadcrumb">
-                <a href="/">首頁</a> > <span>伴侶諮商</span>
-            </nav>
-            <h1 class="page-title">伴侶諮商</h1>
-            <p class="page-subtitle">重建關係，共同成長</p>
-        </div>
-    </div>
-    
-    <section class="doctors-section">
-        <div class="container">
-            <div class="section-intro">
-                <p>伴侶關係是人生中重要的一環，我們的伴侶諮商師具備專業的家庭治療訓練，協助伴侶改善溝通模式、處理衝突、重建信任與親密關係。</p>
-            </div>
-            
-            <div class="doctors-grid">
-                <%
-                const coupleDoctors = [
-                    {
-                        id: 'zhang-mei-ling',
-                        name: '張美玲',
-                        title: '婚姻家族治療師',
-                        gender: 'female',
-                        specialties: '婚姻諮商 | 關係修復 | 溝通技巧',
-                        shortDescription: '專精於伴侶關係治療與婚姻諮商，協助情侶改善溝通模式，重建親密關係。'
-                    },
-                    {
-                        id: 'lin-zheng-xiong',
-                        name: '林正雄',
-                        title: '諮商心理師',
-                        gender: 'male',
-                        specialties: '情感議題 | 衝突調解 | 親密關係',
-                        shortDescription: '多年伴侶諮商經驗，善於處理情感議題與衝突調解，幫助伴侶重新找回愛的連結。'
-                    },
-                    {
-                        id: 'huang-shu-fen',
-                        name: '黃淑芬',
-                        title: '臨床心理師',
-                        gender: 'female',
-                        specialties: '家庭治療 | 系統治療 | 邊界設定',
-                        shortDescription: '專長於伴侶治療與家庭系統工作，協助夫妻建立健康的互動模式與邊界。'
-                    }
-                ];
-                %>
-                
-                <% coupleDoctors.forEach(function(doctor) { %>
-                    <%- include('./layout/doctor-card.ejs', { doctor: doctor }) %>
-                <% }); %>
-            </div>
-            
-            <div class="service-info">
-                <h3>適合對象</h3>
-                <div class="service-features">
-                    <div class="feature">
-                        <h4>溝通困難</h4>
-                        <p>經常爭吵、無法有效溝通、互相不理解</p>
-                    </div>
-                    <div class="feature">
-                        <h4>信任危機</h4>
-                        <p>背叛、外遇、信任破裂需要修復</p>
-                    </div>
-                    <div class="feature">
-                        <h4>親密關係</h4>
-                        <p>親密度下降、缺乏連結感、性生活不協調</p>
-                    </div>
-                    <div class="feature">
-                        <h4>婚前諮商</h4>
-                        <p>準備結婚的情侶，預防性的關係建設</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <%- include('./layout/footer.ejs') %>
-    
-    <script src="./main.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>about</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+    <%- include('./layout/doctors-couple'); -%>
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
 </html>

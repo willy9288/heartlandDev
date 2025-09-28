@@ -1,93 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>成人個別諮商 - 心靈驛站諮商所</title>
-    <link rel="stylesheet" href="./main.css">
-    <meta name="description" content="專業的成人個別心理諮商服務，協助您處理焦慮、憂鬱、情緒管理等議題。">
-</head>
-<body>
-    <%- include('./layout/header.ejs', { currentPage: 'doctors' }) %>
-    
-    <div class="page-header">
-        <div class="container">
-            <nav class="breadcrumb">
-                <a href="/">首頁</a> > <span>成人個別諮商</span>
-            </nav>
-            <h1 class="page-title">成人個別諮商</h1>
-            <p class="page-subtitle">專業的個人心理諮商服務</p>
-        </div>
-    </div>
-    
-    <section class="doctors-section">
-        <div class="container">
-            <div class="section-intro">
-                <p>我們的成人個別諮商服務涵蓋情緒困擾、人際關係、職涯發展、創傷處理等議題。每位心理師都具備專業認證，運用不同的治療取向，為您提供最適合的諮商服務。</p>
-            </div>
-            
-            <div class="doctors-grid">
-                <%
-                // 在實際專案中，這些資料會從 data/doctors.js 或 API 取得
-                const adultDoctors = [
-                    {
-                        id: 'chen-yi-wen',
-                        name: '陳怡文',
-                        title: '諮商心理師',
-                        gender: 'female',
-                        specialties: '焦慮症 | 憂鬱症 | 情緒管理',
-                        shortDescription: '專精於個人心理諮商、情緒管理與壓力調適。擅長認知行為治療法，協助個案重新建構思考模式。'
-                    },
-                    {
-                        id: 'lee-jia-rong',
-                        name: '李佳蓉',
-                        title: '臨床心理師',
-                        gender: 'female',
-                        specialties: '心理評估 | 創傷治療 | 自我探索',
-                        shortDescription: '專長於成人心理評估與治療，具備豐富的臨床經驗。致力於幫助個案探索內在資源，找回生活動力。'
-                    },
-                    {
-                        id: 'wang-zhi-ming',
-                        name: '王志明',
-                        title: '諮商心理師',
-                        gender: 'male',
-                        specialties: '職涯諮商 | 人際關係 | 個人成長',
-                        shortDescription: '擅長個人成長諮商與職涯輔導，幫助個案釐清人生方向，提升自我效能與生活品質。'
-                    }
-                ];
-                %>
-                
-                <% adultDoctors.forEach(function(doctor) { %>
-                    <%- include('./layout/doctor-card.ejs', { doctor: doctor }) %>
-                <% }); %>
-            </div>
-            
-            <div class="service-info">
-                <h3>服務內容</h3>
-                <div class="service-features">
-                    <div class="feature">
-                        <h4>情緒困擾</h4>
-                        <p>焦慮、憂鬱、恐慌、強迫等情緒相關議題的評估與治療</p>
-                    </div>
-                    <div class="feature">
-                        <h4>人際關係</h4>
-                        <p>改善人際互動模式，建立健康的社交關係</p>
-                    </div>
-                    <div class="feature">
-                        <h4>職涯發展</h4>
-                        <p>職業規劃、工作壓力、職場適應等相關議題</p>
-                    </div>
-                    <div class="feature">
-                        <h4>創傷療癒</h4>
-                        <p>處理過往創傷經驗，重建內在安全感</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <%- include('./layout/footer.ejs') %>
-    
-    <script src="./main.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>about</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+    <%- include('./layout/doctors-adult'); -%>
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
 </html>
