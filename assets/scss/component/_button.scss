@@ -85,6 +85,8 @@ $cta-focus-ring: rgba(160, 140, 111, 0.35); // primary-800 的半透明
   // 線框版 hover/active 文字改白
   --bs-btn-hover-color: #fff;
   --bs-btn-active-color: #fff;
+  // 核心修改在這裡：將邊框寬度設定為 2px
+  border-width: 2px; 
 }
 
 // 尺寸：Large / Medium / Small
