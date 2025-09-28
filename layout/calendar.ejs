@@ -76,14 +76,14 @@
 <!-- 諮詢方式 -->
 <div class="container">
  <div class="row d-flex gap-4 my-60 ">
-    <div class="col fw-bold fs-6 fs-lg-5 text-white letter-spacing-22 custom-line-height-30 bg-primary-800 text-center py-3 custom-rounded-100">線上諮商
+    <div class="col fw-bold fs-6 fs-lg-5 text-primary-800 letter-spacing-22 custom-line-height-30 border-4 border text-center py-3 custom-rounded-100" style="border-color: #A08C6F !important;">線上諮商
     </div>
     <div class="col fw-bold fs-6 fs-lg-5 text-white letter-spacing-22 custom-line-height-30 bg-primary-800 text-center py-3 custom-rounded-100">實體諮商
     </div>
 </div>
 
 <!-- 預約日期 -->
-<h4 class="mb-2 h3 text-gray-800 fw-bold underline-decoration">選擇預約日期</h4>
+<h4 class="mb-2 h3 text-gray-800 fw-bold underline-decoration section-title">選擇預約日期</h4>
     <p class="fs-6 mb-36 text-gray-400">
         每個月 24 日公佈下個月班表，於次月 1 日開放預約
     </p>
@@ -97,14 +97,137 @@
     </div>
 <!-- 預約日期 -->
  <!-- 月曆1 -->
-<div class="d-flex justify-content-center text-gray-800">
-  <div
-    class="border rounded bg-primary-100"
-    data-coreui-locale="en-US"
-    data-coreui-start-date="2025/10/6"
-    data-coreui-toggle="calendar"
-  ></div>
+<div class="calendar-section">
+  <div class="calendar-wrap">
+    <div class="cal-card" id="cal-left">
+      <div class="cal-header">
+        <button class="nav-btn nav-prev" aria-label="上一組月份" id="btnPrev">‹</button>
+        <div class="cal-title"></div>
+      </div>
+      <div class="cal-week">
+        <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+      </div>
+      <div class="cal-grid"></div>
+    </div>
+
+    <div class="cal-card" id="cal-right">
+      <div class="cal-header">
+        <div class="cal-title"></div>
+        <button class="nav-btn nav-next" aria-label="下一組月份" id="btnNext">›</button>
+      </div>
+      <div class="cal-week">
+        <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+      </div>
+      <div class="cal-grid"></div>
+    </div>
+  </div>
 </div>
+
+<script>
+  // === 與之前相同的 JS ===
+  const fmtTitle = (y, m)=> `${y}年 ${m}月`;
+  const sameYMD = (a,b)=> a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate();
+
+  function monthMatrix(year, month){
+    const first = new Date(year, month-1, 1);
+    const startWeekday = first.getDay();
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const prevDays = new Date(year, month-1, 0).getDate();
+
+    const cells = [];
+    for(let i=0;i<42;i++){
+      const diff = i - startWeekday;
+      let date, inMonth=true;
+      if(diff<0){ date=new Date(year, month-2, prevDays+diff+1); inMonth=false; }
+      else if(diff>=daysInMonth){ date=new Date(year, month-1, diff-daysInMonth+1); inMonth=false; }
+      else{ date=new Date(year, month-1, diff+1); }
+      cells.push({date,inMonth});
+    }
+    return cells;
+  }
+
+  const calLeft=document.getElementById('cal-left');
+  const calRight=document.getElementById('cal-right');
+  const btnPrev=document.getElementById('btnPrev');
+  const btnNext=document.getElementById('btnNext');
+  let base=new Date(); base.setDate(1);
+  let selected=null;
+
+  function render(){
+    drawMonth(calLeft,new Date(base));
+    drawMonth(calRight,new Date(base.getFullYear(),base.getMonth()+1,1));
+  }
+  function drawMonth(card, firstDay){
+    const y=firstDay.getFullYear(), m=firstDay.getMonth()+1;
+    card.querySelector('.cal-title').textContent=fmtTitle(y,m);
+    const grid=card.querySelector('.cal-grid');
+    grid.innerHTML='';
+    const cells=monthMatrix(y,m);
+    const today=new Date(); today.setHours(0,0,0,0);
+    cells.forEach(({date,inMonth})=>{
+      const d=document.createElement('div');
+      d.className='day';
+      d.textContent=date.getDate();
+      if(!inMonth) d.classList.add('is-other');
+      if(sameYMD(date,today)) d.classList.add('is-today');
+      if(inMonth){
+        d.classList.add('is-selectable');
+        d.addEventListener('click',()=>{
+          document.querySelectorAll('.day.is-selected').forEach(el=>el.classList.remove('is-selected'));
+          d.classList.add('is-selected');
+          selected=new Date(date);
+        });
+      } else d.classList.add('is-disabled');
+      if(selected && sameYMD(selected,date)) d.classList.add('is-selected');
+      grid.appendChild(d);
+    });
+  }
+  btnPrev.addEventListener('click',()=>{ base=new Date(base.getFullYear(),base.getMonth()-1,1); render(); });
+  btnNext.addEventListener('click',()=>{ base=new Date(base.getFullYear(),base.getMonth()+1,1); render(); });
+  render();
+</script>
+
+<!-- 時間 -->
+
+<div class="section">
+  <h2 class="highlight-title">選擇預約時間</h2>
+
+  <div class="period">
+    <div class="period-label">上午</div>
+    <div class="slots">
+      <div class="time-slot">10:00</div>
+      <div class="time-slot">11:00</div>
+      <div class="time-slot">12:00</div>
+    </div>
+  </div>
+
+  <div class="period">
+    <div class="period-label">下午</div>
+    <div class="slots">
+      <div class="time-slot">14:00</div>
+      <div class="time-slot">15:00</div>
+      <div class="time-slot">16:00</div>
+      <div class="time-slot">17:00</div>
+      <div class="time-slot">18:00</div>
+    </div>
+  </div>
+
+  <div class="period">
+    <div class="period-label">晚上</div>
+    <div class="slots">
+      <div class="time-slot">19:00</div>
+      <div class="time-slot">20:00</div>
+      <div class="time-slot">21:00</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 切換選取狀態
+  document.querySelectorAll('.time-slot').forEach(btn=>{
+    btn.addEventListener('click', ()=> btn.classList.toggle('is-selected'));
+  });
+</script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.20.0/dist/js/coreui.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.20.0/dist/css/coreui.min.css" rel="stylesheet">  

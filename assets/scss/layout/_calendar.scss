@@ -1,0 +1,165 @@
+// 月曆
+
+:root{
+    --brown: #A08C6F;
+    --ink:   #222;
+    --muted: #6b7280;
+    --line:  #e5e7eb;
+    --bg:    #f7f7f6;
+  }
+
+  /* 月曆容器 */
+  .calendar-section{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+    color: var(--ink);
+    background:#fff;
+    padding:24px;
+  }
+
+  .calendar-section .calendar-wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .calendar-section .cal-card{
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px 18px;
+  }
+
+  .calendar-section .cal-header{
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 8px 24px 16px;
+  }
+  .calendar-section .cal-title{
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: .5px;
+  }
+  .calendar-section .nav-btn{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    width: 32px; height: 32px;
+    border-radius: 999px;
+    cursor:pointer;
+    color: var(--muted);
+  }
+  .calendar-section .nav-prev{ left: 0; }
+  .calendar-section .nav-next{ right: 0; }
+  .calendar-section .nav-btn:hover{ background: #f1f2f3; }
+
+  .calendar-section .cal-week{
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--bg);
+    border-radius: 6px;
+    padding: 10px 8px;
+    margin-bottom: 8px;
+    color:#555;
+    font-weight:600;
+    font-size:14px;
+  }
+  .calendar-section .cal-week div{ text-align:center; }
+
+  .calendar-section .cal-grid{
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 22px 26px;
+    padding: 16px 8px 8px;
+    min-height: 380px;
+  }
+  .calendar-section .day{
+    justify-self: center;
+    align-self: start;
+    width: 48px; height: 48px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius: 10px;
+    color:#333;
+    user-select:none;
+  }
+  .calendar-section .day.is-other{ color: #d1d5db; }
+  .calendar-section .day.is-disabled{ color:#d9d9d9; pointer-events:none; }
+  .calendar-section .day.is-today{
+    outline: 2px dashed rgba(160,140,111,.45);
+    outline-offset: 3px;
+  }
+  .calendar-section .day.is-selectable{ cursor:pointer; }
+  .calendar-section .day.is-selectable:hover{
+    box-shadow: 0 0 0 3px rgba(160,140,111,.15);
+  }
+  .calendar-section .day.is-selected{
+    background: var(--brown);
+    color:#fff;
+    border-color:var(--brown);
+  }
+
+  @media (max-width: 860px){
+    .calendar-section .calendar-wrap{ grid-template-columns: 1fr; gap:16px; }
+    .calendar-section .cal-grid{ gap: 18px 22px; min-height: 340px; }
+    .calendar-section .day{ width:44px; height:44px; }
+  }
+
+
+
+.section-title {
+    
+      display: inline-block; /* 讓底線只跟文字等寬 */
+      box-shadow: inset 0 -9px 0 #A1BBC5; /* 底色（螢光筆效果） */
+    }
+
+    .section {
+    max-width: 863px;
+    margin: 0 auto;
+  }
+
+  .highlight-title {
+    font-weight: bold;
+    font-size: 24px;
+    color:#222;
+    display:inline-block;
+    box-shadow: inset 0 -10px 0 #87a9b5;
+    margin-bottom: 16px;
+  }
+
+  .period { margin: 14px 0; }
+  .period-label { font-weight:600; margin-bottom:8px; }
+
+  /* 時間格容器：用 grid 控制 */
+  .slots {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(5, 1fr); /* 預設一列 5 個 */
+  }
+
+  /* 時間按鈕 */
+  .time-slot {
+    border:1px solid #d1d5db;
+    background:#fff;
+    color:#374151;
+    padding:10px 0;
+    border-radius:8px;
+    text-align:center;
+    cursor:pointer;
+    font-size:14px;
+    transition: all .15s ease;
+  }
+  .time-slot:hover { border-color:#A08C6F; }
+  .time-slot.is-selected {
+    background:#A08C6F;
+    color:#fff;
+    border-color:#A08C6F;
+  }
+
+  /* 手機版 (≤375px) */
+  @media (max-width: 375px) {
+    .section { padding: 0 12px; }         /* 左右留白 12px */
+    .slots { grid-template-columns: repeat(3, 1fr); } /* 一列 3 個 */}

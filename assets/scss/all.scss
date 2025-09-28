@@ -4,7 +4,8 @@
 @import "./utils/variables";
 @import "./utils/variables-dark";
 @import "../../node_modules/bootstrap";
-
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
 @import './utils/utilities';
 
 @import './base/base';
@@ -21,3 +22,6 @@
 
 // 醫生
 @import 'doctors';
+
+
+
