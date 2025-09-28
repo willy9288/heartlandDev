@@ -1,0 +1,20 @@
+/* pages/_post.scss 之類 */
+.breadcrumb {
+  --bs-breadcrumb-divider: "/";
+  --bs-breadcrumb-divider-color: #{$gray-400}; // ← 用你的灰
+  font-weight: 400;
+  margin-bottom: 0;
+
+  .breadcrumb-item a {
+    color: $gray-600;
+
+    &:hover {
+      color: $gray-800;
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: $gray-600;
+    font-weight: 700;
+  }
+}

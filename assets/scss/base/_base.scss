@@ -9,3 +9,11 @@ a {
   display: inline-block;
   color: inherit;
 }
+
+:root {
+  --header-h: 0px; // 預設
+}
+
+body {
+  padding-top: var(--header-h); 
+}

@@ -1,12 +1,14 @@
 import './assets/scss/all.scss';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+import './assets/js/header'
+
 console.log('Hello world');
 
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
 
 const photoSwiper = new Swiper('.photo-swiper', {
   modules: [Navigation],
@@ -24,4 +26,13 @@ const photoSwiper = new Swiper('.photo-swiper', {
   },
 });
 
-
+const workshopSwiper = new Swiper('.workshop-swiper', {
+  modules: [Navigation],
+  slidesPerView: 1, // 每次一張
+  spaceBetween: 0,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  loop: true,
+});

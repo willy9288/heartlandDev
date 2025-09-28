@@ -4,13 +4,176 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>about</title>
+    <title>心靈工作坊</title>
   </head>
   <body>
     <%- include('./layout/header'); -%>
-    <h1>我是about</h1>
+    <main class="bg-primary-100 py-11">
+      <div class="container">
+        <!--breadcrumb-->
+        <nav aria-label="breadcrumb" class="mb-8">
+          <ol class="breadcrumb d-flex">
+            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              心靈工作坊
+            </li>
+          </ol>
+        </nav>
+        <div class="row">
+          <!--sidebar-->
+          <aside class="sidebar-nav col-2">
+            <h2 class="sidebar-title">心靈工作坊</h2>
+            <ul class="nav flex-column">
+              <li><a href="#" class="nav-link">實體課程 </a></li>
+              <li><a href="#" class="nav-link">線上影音</a></li>
+              <li><a href="#" class="nav-link">驛站文章</a></li>
+            </ul>
+          </aside>
+
+          <!--main content -->
+          <section class="workshop col-10">
+            <!--swiper-->
+            <div class="swiper workshop-swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="ws-hero">
+                    <img
+                      class="ws-hero-img"
+                      src="/assets/images/給自己的安靜時光：情緒覺察與寫作工作坊.png"
+                      alt=""
+                    />
+                    <article class="ws-card">
+                      <div class="ws-card-body">
+                        <p class="ws-meta">2025/09/28（六）13:30–16:00</p>
+                        <h3 class="ws-title">
+                          給自己的安靜時光：情緒覺察與寫作工作坊
+                        </h3>
+                        <p class="ws-desc mb-2">
+                          透過書寫，與內在聲音重新對話
+                        </p>
+                        <p class="ws-desc">在柔和空間中進行簡單引導與自由書寫，無需寫作經驗，心理師帶領你用文字探索內在感受，適合想自我照顧、暫時離開混亂日常的人參加。</p>
+                      </div>
+                      <div class="ws-info">
+                        <p>880 元（含紙筆材料、茶點）</p>
+                        <p class="ms-3"
+                          >體驗型工作坊・適合初次接觸心理探索者</p
+                        >
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="ws-hero">
+                    <img
+                      class="ws-hero__img"
+                      src="/assets/images/給自己的安靜時光：情緒覺察與寫作工作坊.png"
+                      alt=""
+                    />
+                    <article class="ws-card">
+                      <div class="ws-card__body">
+                        <p class="ws-meta">2025/09/28（六） 13:30–16:00</p>
+                        <h3 class="ws-title">
+                          給自己的安靜時光：情緒覺察與寫作坊
+                        </h3>
+                        <p class="ws-desc">……</p>
+                      </div>
+                      <div class="ws-info">
+                        <strong>880 元（含紙筆材料、茶點）</strong>
+                        <span class="ms-3"
+                          >體驗型工作坊・適合初次接觸心理探索者</span
+                        >
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+              </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="workshop-nav d-flex gap-4 mt-6">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </section>
+
+          <br /><br />
+          <section class="workshop col-8">
+            <!--swiper-->
+            <div class="swiper workshop-swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="ws-hero">
+                    <img
+                      class="ws-hero__img"
+                      src="/assets/images/給自己的安靜時光：情緒覺察與寫作工作坊.png"
+                      alt=""
+                    />
+                    <article class="ws-card">
+                      <div class="ws-card__body">
+                        <p class="ws-meta">2025/09/28（六） 13:30–16:00</p>
+                        <h3 class="ws-title">
+                          給自己的安靜時光：情緒覺察與寫作坊
+                        </h3>
+                        <p class="ws-desc">……</p>
+                      </div>
+                      <div class="ws-info">
+                        <strong>880 元（含紙筆材料、茶點）</strong>
+                        <span class="ms-3"
+                          >體驗型工作坊・適合初次接觸心理探索者</span
+                        >
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="ws-hero">
+                    <img
+                      class="ws-hero__img"
+                      src="/assets/images/給自己的安靜時光：情緒覺察與寫作工作坊.png"
+                      alt=""
+                    />
+                    <article class="ws-card">
+                      <div class="ws-card__body">
+                        <p class="ws-meta">2025/09/28（六） 13:30–16:00</p>
+                        <h3 class="ws-title">
+                          給自己的安靜時光：情緒覺察與寫作坊
+                        </h3>
+                        <p class="ws-desc">……</p>
+                      </div>
+                      <div class="ws-info">
+                        <strong>880 元（含紙筆材料、茶點）</strong>
+                        <span class="ms-3"
+                          >體驗型工作坊・適合初次接觸心理探索者</span
+                        >
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+              </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="workshop-nav d-flex gap-4 mt-6">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>
