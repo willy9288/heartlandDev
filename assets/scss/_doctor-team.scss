@@ -178,8 +178,47 @@
     }
   }
 }
+// ===== 詳細資料按鈕 =====
+.btn-detail {
+  flex: 1 !important;
+  padding: 0.75rem 1.25rem !important;
+  border-radius: 6.25rem !important;
+  border: 1.5px solid var(--bs-gray-300) !important;
+  color: var(--bs-gray-600) !important;
+  background: var(--bs-white) !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
 
-// ===== 預約按鈕 - 完全使用專案的 btn-cta =====
+  &:hover {
+    border-color: var(--bs-primary-600) !important;
+    color: var(--bs-primary-600) !important;
+    background: var(--bs-primary-50) !important;
+    transform: translateY(-2px) !important;
+  }
+}
+// ===== 預約按鈕 =====
+.btn-appointment {
+  flex: 1 !important;
+  padding: 0.75rem 1.25rem !important;
+  border-radius: 6.25rem !important;
+  background: var(--bs-primary-800) !important;
+  color: var(--bs-white) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+
+  &:hover {
+    background: var(--bs-primary-900) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(var(--bs-primary-800-rgb), 0.3) !important;
+  }
+}
+
+// ===== 傳統預約按鈕 - 完全使用專案的 btn-cta =====
 .doctor-card .btn-cta {
   // 確保按鈕在卡片底部
   margin-top: auto !important;
@@ -189,7 +228,6 @@
   // 如果需要調整圓角，使用專案設定
   border-radius: 6.25rem !important; // 100px
 }
-
 // ===== 測試用：強制顯示 =====
 // 如果上面的方法還是不行，加入這個緊急修正
 .doctor-team-section * {
