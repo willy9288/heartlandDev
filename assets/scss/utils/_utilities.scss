@@ -55,8 +55,9 @@ $utilities: map-merge(
   margin-bottom: 48px;
 }
 
-.mb-60{
+.my-60{
   margin-bottom: 60px;
+  margin-top: 60px;
 }
 .my-100
 {
@@ -85,6 +86,10 @@ $utilities: map-merge(
 
 .custom-rounded-20 {
   border-radius: 20px;}
+
+.custom-rounded-100{
+  border-radius: 100px;
+}
 
 @import "bootstrap/scss/utilities/api";
 
