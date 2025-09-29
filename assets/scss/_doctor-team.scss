@@ -367,3 +367,122 @@
   &:nth-child(5) { transition-delay: 0.5s; }
   &:nth-child(6) { transition-delay: 0.6s; }
 }
+
+
+// 麵包屑
+.breadcrumb-section {
+  background: transparent;
+  
+  .breadcrumb-item {
+    + .breadcrumb-item::before {
+      content: "›";
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+// 醫師詳細頁面
+.doctor-detail-page {
+  min-height: calc(100vh - 200px);
+}
+
+// 側邊欄卡片
+.doctor-sidebar-card {
+  @media (max-width: 991.98px) {
+    position: relative !important;
+    top: 0 !important;
+  }
+}
+
+// 詳細區塊
+.detail-section {
+  h4 {
+    letter-spacing: 0.08em;
+  }
+}
+
+// 預約步驟指示器
+.booking-steps {
+  .step-circle {
+    transition: all 0.3s ease;
+  }
+}
+
+// 諮商流程
+.booking-process {
+  .process-step {
+    .step-number .badge {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// 諮商費用表格
+.booking-fee-info {
+  table {
+    tr {
+      td {
+        padding: 0.75rem 0;
+        font-size: 0.9375rem;
+      }
+    }
+  }
+}
+
+// 預約按鈕
+.booking-actions {
+  .btn {
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// 響應式調整
+@media (max-width: 991.98px) {
+  .doctor-detail-page {
+    padding: 2.5rem 0;
+  }
+
+  .detail-section {
+    margin-bottom: 2.5rem !important;
+
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .booking-fee-info,
+  .booking-process,
+  .booking-notice {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .booking-steps {
+    .step-item {
+      .step-circle {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.875rem;
+      }
+
+      p {
+        font-size: 0.75rem !important;
+      }
+    }
+  }
+
+  .booking-actions {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
