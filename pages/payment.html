@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+
+    <title>index</title>
+  </head>
+  <body style="font-family: Noto Sans TC;">
+    <%- include('./layout/header'); -%>
+    
+    <!-- 麵包屑 -->
+    <section class="container" style="padding-top: 160px; padding-bottom: 24px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-gray-600">
+                <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                <li class="breadcrumb-item"><a href="#">諮詢團隊</a></li>
+                <li class="breadcrumb-item active fw-bold" aria-current="page">確認預約</li>
+            </ol>
+        </nav>
+    </section>
+    <!-- 進度條 -->
+    <section class="mb-lg-8 mx-3" style="margin-bottom: 28px;">
+        <div class="container d-flex border border-gray-200 rounded-1 py-7 justify-content-center">
+            <div class="text-center px-lg-6 flex-shrink-0" style="padding-left: 9.5px; padding-right: 9.5px;">
+                <p class="progress-circle mb-1 fs-6 fs-lg-5" style="font-family: Noto Serif TC;">1</p>
+                <p class="text-gray-400 progress-font">預約時間</p>
+            </div>
+            <div class="dashed-border"></div>
+            <div class="text-center px-lg-6 flex-shrink-0" style="padding-left: 9.5px; padding-right: 9.5px;">
+                <p class="progress-circle mb-1 fs-6 fs-lg-5" style="font-family: Noto Serif TC;">2</p>
+                <p class="text-gray-400 progress-font">確認預約</p>
+            </div>
+            <div class="dashed-border"></div>
+            <div class="text-center px-lg-6 flex-shrink-0" style="padding-left: 9.5px; padding-right: 9.5px;">
+                <p class="progress-circle mb-1 fs-6 fs-lg-5 bg-gray-200" style="font-family: Noto Serif TC;">3</p>
+                <p class="text-gray-200 progress-font">完成預約</p>
+            </div>
+        </div>
+    </section>
+    <!-- 填寫表格 -->
+    <section>
+        <div class="container maincontainer">
+            <div class="d-flex justify-content-between mb-lg-7" style="margin-bottom: 28px;">
+                <h4 class="fw-bold title-underline fs-lg-4 fs-5" style="letter-spacing: 0.12em; font-family: Noto Serif TC;">填寫資訊聯絡資訊</h4>
+                <p class="d-flex align-items-center text-danger fs-lg-6" style="font-size: 14px;">*項目必填</p>
+            </div>
+
+            <div class="mb-lg-7 text-gray-600 fs-5" style="margin-bottom: 28px; letter-spacing: 0.11em;">
+                <label for="name" class="form-label mb-lg-3 mb-2 fs-lg-5 fs-6">姓名<span class="text-danger">*</span></label>
+                <div class="d-lg-flex align-items-lg-center">                    
+                    <input type="name" class="form-control placeholderfont rounded-1 mb-3 mb-lg-0 me-6 py-3 ps-4" id="name" placeholder="請填寫真實姓名...">
+                    <div class="d-flex me-9">
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label fs-6 fs-lg-5 ms-2" for="inlineRadio1">小姐</label>
+                        </div>
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label fs-6 fs-lg-5 ms-2" for="inlineRadio2">先生</label>
+                        </div>
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                            <label class="form-check-label fs-6 fs-lg-5 ms-2" for="inlineRadio3">其他</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-lg-7 text-gray-600 fs-5" style="margin-bottom: 28px; letter-spacing: 0.11em;">
+                <label for="phone" class="form-label fs-lg-5 fs-6 mb-lg-3 mb-2">聯絡電話<span class="text-danger">*</span></label>
+                <input type="phone" class="placeholderfont form-control rounded-1 me-6 py-3 ps-4" id="phone" placeholder="請填寫常用電話...">
+            </div>
+
+            <div class="mb-lg-7 text-gray-600 fs-5" style="margin-bottom: 28px; letter-spacing: 0.11em;">
+                <label for="email" class="form-label fs-lg-5 fs-6 mb-lg-3 mb-2">Email<span class="text-danger">*</span></label>
+                <input type="email" class="placeholderfont form-control rounded-1 me-6 py-3" id="email" placeholder="請填寫E-mail...">
+            </div>
+
+            <div class="mb-lg-7" style="margin-bottom: 28px;">
+                <h5 class="mb-lg-3 mb-2 fw-normal text-gray-600 fs-lg-5 fs-6" style="font-family: Noto Sans TC; letter-spacing: 0.11em;">晤談主題<span class="ms-3" style="font-size: 16px; color: #D0BBA6;">*可複選</span></h5>
+                <input type="checkbox" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                <label class="mb-2 mb-lg-0 btn btn-primary py-2 fw-bold me-3" for="option1" style="border-radius: 8px; letter-spacing: 0.09em;">自我成長</label>
+
+                <input type="checkbox" class="btn-check" name="options" id="option2" autocomplete="off" checked>
+                <label class="mb-2 mb-lg-0 btn btn-primary py-2 fw-bold me-3" for="option2" style="border-radius: 8px; letter-spacing: 0.09em;">性別認同</label>
+
+                <input type="checkbox" class="btn-check" name="options" id="option3" autocomplete="off" checked>
+                <label class="mb-2 mb-lg-0 btn btn-primary py-2 fw-bold me-3" for="option3" style="border-radius: 8px; letter-spacing: 0.09em;">同志諮商</label>
+
+                <input type="checkbox" class="btn-check" name="options" id="option4" autocomplete="off" checked>
+                <label class="mb-2 mb-lg-0 btn btn-primary py-2 fw-bold me-3" for="option4" style="border-radius: 8px; letter-spacing: 0.09em;">壓力調適</label>
+
+                <input type="checkbox" class="btn-check" name="options" id="option5" autocomplete="off" checked>
+                <label class="mb-2 mb-lg-0 btn btn-primary py-2 fw-bold me-3" for="option5" style="border-radius: 8px; letter-spacing: 0.09em;">情緒困擾</label>
+
+                <input type="checkbox" class="btn-check" name="options" id="option6" autocomplete="off" checked>
+                <label class="mb-2 mb-lg-0 btn btn-primary py-2 fw-bold me-3" for="option6" style="border-radius: 8px; letter-spacing: 0.09em;">感情議題</label>
+
+                <input type="checkbox" class="btn-check" name="options" id="option7" autocomplete="off" checked>
+                <label class="btn btn-primary py-2 fw-bold me-3" for="option7" style="border-radius: 8px; letter-spacing: 0.09em;">親子關係</label>
+
+                <input type="checkbox" class="btn-check" name="options" id="option8" autocomplete="off" checked>
+                <label class="btn btn-primary py-2 fw-bold" for="option8" style="border-radius: 8px; letter-spacing: 0.09em;">原生家庭</label>
+            </div>
+
+            <div class="mb-lg-7 text-gray-600 fs-5" style="margin-bottom: 28px; letter-spacing: 0.11em;">
+                <label for="Textarea" class="fs-lg-5 fs-6 form-label">其他想晤談的主題</label>
+                <textarea class="placeholderfont form-control rounded-1 pt-3 ps-4" style="height: 116px;" id="Textarea" placeholder="請詳盡填寫..." rows="3"></textarea>
+            </div>
+
+            <div class="mb-lg-7 text-gray-600 fs-5" style="margin-bottom: 28px; letter-spacing: 0.11em;">
+                <label class="form-label mb-lg-3 mb-2 fs-lg-5 fs-6">是否看過諮商師</label>
+                <div class="mb-3 d-lg-flex align-items-center ">
+                    <div class="d-flex mb-3 mb-lg-0">
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sawit" value="option1">
+                            <label class="form-check-label fs-lg-5 fs-6 ms-2" for="sawit">是</label>
+                        </div>
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="nosawit" value="option2">
+                            <label class="form-check-label fs-lg-5 fs-6 ms-2" for="nosawit">否</label>
+                        </div>
+                    </div>
+
+                    <div class="d-flex w-100">
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherreasons" value="option3">
+                            <label class="form-check-label fs-lg-5 fs-6 ms-2" for="otherreasons">其他</label>
+                        </div>     
+                        <input type="text" class="placeholderfont form-control rounded-1 py-lg-3 py-2" id="otherreasons" placeholder="請填寫其他因素...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-lg-7 text-gray-600 fs-5" style="margin-bottom: 28px; letter-spacing: 0.11em;">
+                <label class="form-label mb-lg-3 mb-2 fs-lg-5 fs-6">是否看過身心科醫師在服藥</label>
+                <div class="mb-3 d-lg-flex align-items-center">
+                    <div class="d-flex mb-3 mb-lg-0">
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="havetaken" value="option1">
+                            <label class="form-check-label fs-lg-5 fs-6 ms-2" for="havetaken">是</label>
+                        </div>
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="notaken" value="option2">
+                            <label class="form-check-label fs-lg-5 fs-6 ms-2" for="notaken">否</label>
+                        </div>
+                    </div>
+                    <div class="d-flex w-100">
+                        <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="others" value="option3">
+                            <label class="form-check-label fs-lg-5 fs-6 ms-2" for="others">其他</label>
+                        </div>     
+                        <input type="text" class="placeholderfont form-control rounded-1 py-lg-3 py-2 ps-lg-4 ps-3" id="others" placeholder="請填寫其他因素..."> 
+                    </div>
+                </div>
+            </div>
+
+             <div class="mb-lg-7" style="margin-bottom: 28px;">
+                <label class="form-label text-gray-600 mb-2 mb-lg-3 fs-lg-5 fs-6" style="letter-spacing: 0.11em;">付款方式 <span class="text-danger">*</span></label>
+                <div class="mb-3 d-flex align-items-center ">
+                    <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="creditcard" value="option1">
+                        <label class="form-check-label text-gray-600 fs-lg-5 fs-6 ms-2" for="creditcard" style="letter-spacing: 0.11em;">信用卡</label>
+                    </div>
+                    <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cash" value="option2">
+                        <label class="form-check-label text-gray-600 fs-lg-5 fs-6 ms-2" for="cash" style="letter-spacing: 0.11em;">現金</label>
+                    </div>
+                    <div class="form-check form-check-inline flex-shrink-0 d-flex align-items-center">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="MobilePayment" value="option3">
+                        <label class="form-check-label text-gray-600 fs-lg-5 fs-6 ms-2" for="MobilePayment" style="letter-spacing: 0.11em;">行動支付</label>
+                    </div>                                 
+                </div>
+            </div>
+            <h5 class="text-center fs-lg-5 fs-6 text-gray-600 mb-3" style="font-family: Noto Sans TC; letter-spacing: 0.11em;">
+                <span class="mb-1" style="display: inline-block;">按下確認鍵代表已閱讀</span>
+                <br class="d-lg-none">
+                <span>並同意隱私條款與諮商條款</span>
+            </h5>
+            
+            <div class="d-flex justify-content-center mb-lg-11" style="margin-bottom: 52px;">
+                <button type="button" class="fs-6 fs-lg-5 confrim-button">確認預約與付款</button>
+            </div>
+            
+            
+        </div>
+    </section> 
+      
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
