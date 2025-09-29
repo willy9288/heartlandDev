@@ -1,0 +1,150 @@
+// 側邊攔
+.sidebar-nav {
+  .sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: 4px;
+  }
+
+  .nav {
+    padding-top: 12px;
+    gap: 4px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--bs-gray-600);
+    padding: 8px 12px;
+
+    &:hover {
+      color: var(--bs-primary-800);
+    }
+
+    &:active {
+      color: var(--bs-primary-800);
+    }
+  }
+}
+
+// 上方swiper
+
+/* ===== 參數 ===== */
+:root {
+  --ws-stage-max: 1076px;
+  --ws-hero-img-w-max: 636px;
+  --ws-hero-img-radius: 20px;
+
+  --ws-card-w-max: 636px;
+  --ws-card-h: auto;
+  --ws-card-top: 100px;
+  --ws-card-left: 440px;
+
+  /* 白卡向下疊出的高度，讓外層補底部內距收住它 */
+  --ws-stage-bottom-gap: 0px; /* 依實際白卡高度微調 */
+}
+
+/* ===== 讓這組 Swiper 不裁上下，僅隱藏左右 ===== */
+// .workshop-swiper {
+//   overflow-x: hidden !important;
+//   overflow-y: visible !important;
+// }
+
+/* 某些版本會把 wrapper 卡死，設 auto 比較保險 */
+.workshop .swiper-wrapper {
+  height: auto;
+}
+
+/* ===== 每張 slide 的舞台 ===== */
+.ws-hero {
+  position: relative; /* ★ 給白卡的定位參考 */
+  width: min(100%, var(--ws-stage-max));
+  margin-inline: auto;
+  padding-bottom: var(--ws-stage-bottom-gap); /* ★ 補底部安全距，避免被裁 */
+}
+
+/* ===== 左側大圖 ===== */
+.ws-hero-img {
+  width: 100%; /* ★ 實用且穩定 */
+  max-width: var(--ws-hero-img-w-max);
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--ws-hero-img-radius);
+}
+
+/* ===== 右上白卡 ===== */
+.ws-card {
+  max-width: var(--ws-card-w-max);
+  background: var(--bs-white);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 10; /* ★ 一律保持較高層級 */
+}
+
+/* 手機：白卡放圖片下方 */
+@media (max-width: 991.98px) {
+  .ws-card {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+/* 桌機：白卡覆蓋到圖片上 */
+@media (min-width: 992px) {
+  .ws-card {
+    position: absolute;
+    top: var(--ws-card-top);
+    left: var(--ws-card-left);
+    width: var(--ws-card-w-max); /* ★ 用 width，避免被內容撐寬 */
+    height: var(--ws-card-h);
+    /* z-index 不要在這裡重設較小值，以免覆蓋掉上面的 10 */
+  }
+}
+
+/* ===== 文字 ===== */
+.ws-card-body {
+  padding: clamp(16px, 2.4vw, 32px);
+}
+.ws-info {
+  background: var(--bs-primary-200);
+  color: #212121;
+  padding: 14px clamp(16px, 2.4vw, 24px);
+}
+.ws-meta {
+  color: var(--bs-primary-1000);
+  letter-spacing: 0.06em;
+  margin: 0 0 0.5rem;
+}
+.ws-title {
+  color: var(--bs-gray-800);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  font-size: clamp(22px, 2.4vw, 28px);
+}
+.ws-desc {
+  color: var(--bs-gray-800);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== 導航按鈕（不讓它覆蓋內容） ===== */
+.workshop-nav {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  z-index: 1; /* 低於白卡即可 */
+}
+.workshop-nav .swiper-button-prev,
+.workshop-nav .swiper-button-next {
+  position: static !important; /* ★ 覆蓋 Swiper 預設的 absolute */
+  margin: 0;
+}

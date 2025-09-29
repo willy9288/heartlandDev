@@ -1,0 +1,40 @@
+/* Swiper 按鈕客製化 */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--bs-primary-800); // 預設邊框顏色
+  color: var(--bs-primary-800); // 箭頭顏色
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 讓 Swiper 預設箭頭 icon 調整 */
+  &::after {
+    font-size: 20px; // 調整箭頭大小
+    font-weight: bold;
+  }
+
+  /* Hover 狀態 */
+  &:hover {
+    background-color: var(--bs-primary-800); // 實心
+    color: var(--bs-white); // 箭頭變白
+    border-color: var(--bs-primary-800);
+    transition: all 0.3s ease-out;
+  }
+
+  /* Focus 狀態 */
+  &:focus {
+    outline: none;
+    border: 2px solid var(--bs-primary-400);
+    color: var(--bs-primary-800);
+  }
+
+  /* Disabled 狀態 */
+  &.swiper-button-disabled {
+    border-color: var(--bs-gray-300);
+    color: var(--bs-gray-300);
+    opacity: 1; // Swiper 預設會降透明度，可改成固定樣式
+  }
+}
