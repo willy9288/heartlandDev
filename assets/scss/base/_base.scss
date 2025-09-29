@@ -10,8 +10,13 @@ a {
   color: inherit;
 }
 
+/* 建議的全域重置 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
-  --header-h: 0px; // 預設
+  --header-h: 72px; // 預設
 }
 
 body {
