@@ -1,83 +1,19 @@
-<!-- <div class="container calendar-container mt-5"> 
-    <div class="calendar-header">2025年 10月</div>
-    <table class="calendar-table">
-        <thead>
-            <tr>
-                <th>日</th>
-                <th>一</th>
-                <th>二</th>
-                <th>三</th>
-                <th>四</th>
-                <th>五</th>
-                <th>六</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="faded"></td>
-                <td class="faded"></td>
-                <td class="faded"></td>
-                <td class="faded"></td>
-                <td><div class="calendar-day active">1</div></td>
-                <td><div class="calendar-day active">2</div></td>
-                <td><div class="calendar-day active">3</div></td>
-            </tr>
-            <tr>
-                <td><div class="calendar-day active">4</div></td>
-                <td><div class="calendar-day active">5</div></td>
-                <td><div class="calendar-day active highlight">6</div></td>
-                <td><div class="calendar-day active">7</div></td>
-                <td><div class="calendar-day active">8</div></td>
-                <td><div class="calendar-day active">9</div></td>
-                <td><div class="calendar-day active">10</div></td>
-            </tr>
-            <tr>
-                <td><div class="calendar-day active">11</div></td>
-                <td><div class="calendar-day active">12</div></td>
-                <td><div class="calendar-day active">13</div></td>
-                <td><div class="calendar-day active">14</div></td>
-                <td><div class="calendar-day active">15</div></td>
-                <td><div class="calendar-day active">16</div></td>
-                <td><div class="calendar-day active">17</div></td>
-            </tr>
-            <tr>
-                <td><div class="calendar-day active">18</div></td>
-                <td><div class="calendar-day active">19</div></td>
-                <td><div class="calendar-day active">20</div></td>
-                <td><div class="calendar-day active">21</div></td>
-                <td><div class="calendar-day active">22</div></td>
-                <td><div class="calendar-day active">23</div></td>
-                <td><div class="calendar-day active">24</div></td>
-            </tr>
-            <tr>
-                <td><div class="calendar-day active">25</div></td>
-                <td><div class="calendar-day active">26</div></td>
-                <td><div class="calendar-day active">27</div></td>
-                <td><div class="calendar-day active">28</div></td>
-                <td><div class="calendar-day active">29</div></td>
-                <td><div class="calendar-day active">30</div></td>
-                <td><div class="calendar-day active">31</div></td>
-            </tr>
-        </tbody>
-    </table>
-</div>-->
-<!-- 月曆 -->
  
- <div class="container my-100">
- <div class="row">
-    <div class="col-6">
-<button type="button" class="btn btn-primary">實體諮商</button>
-    </div>
-    <div class="col-6">
-        <button type="button" class="btn">
-            實體諮商
-        </button>
-    </div>
-</div>
-    
-
-
-<!-- 備份月曆 
+<!-- Modal 按鈕
+    <button type="button" class="btn btn-primary-100">Primary100</button>
+    <button type="button" class="btn btn-primary-400">Primary400</button>
+    <button type="button" class="btn btn-primary-1000">Primary1000</button>
+<button type="button" class="btn btn-secondary-100">Secondary100</button>
+<button type="button" class="btn btn-secondary-400">Secondary400</button>
+<button type="button" class="btn btn-secondary-800">Secondary800</button>
+<button type="button" class="btn btn-secondary-1000">Secondary1000</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+ 備份月曆 
  <div class="container">
  <div class="row justify-content-center">
     <div class="col-6 btn-group w-100 mb-5 custom-toggle-group" role="group" aria-label="預約類型切換">
@@ -106,3 +42,267 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 -->
+
+
+
+<!-- 諮詢方式 -->
+<div class="container">
+    <div class="row d-flex gap-4 my-60">
+      <div class="col option-btn btn-outline-brown">線上諮商</div>
+      <div class="col option-btn btn-brown">實體諮商</div>
+    </div>
+  </div>
+<!-- 預約日期 -->
+ <div class="container">
+<h4 class="mb-2 h4 text-gray-800 fw-bold pen">選擇預約日期</h4>
+    <p class="fs-6 mb-36 text-gray-400">
+        每個月 24 日公佈下個月班表，於次月 1 日開放預約
+    </p>
+    <div class="row">
+        <div class="col mb-5">
+            <select class="form-select custom-select-control" aria-label="日期選擇">
+                <option style="color:#5B5B5B;" selected>10 月 6 日 星期三 </option>
+                <option value="1">其他日期...</option>
+                </select>
+        </div>
+    </div>
+    </div>
+<!-- 預約日期 -->
+ <!-- 月曆1 -->
+  
+<form id="bookingForm" action="/submit" method="POST">
+  <div class="calendar-section" id="BookingWidget">
+    <!-- <h2 class="highlight-title">選擇預約日期</h2> -->
+
+    <!-- 雙月月曆 -->
+    <div class="calendar-wrap justify-content-center">
+      <div class="cal-card" id="cal-left">
+        <div class="cal-header">
+          <button class="nav-btn nav-prev" aria-label="上一組月份" id="btnPrev">‹</button>
+          <div class="cal-title"></div>
+        </div>
+        <div class="cal-week">
+          <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+        </div>
+        <div class="cal-grid"></div>
+      </div>
+
+      <div class="cal-card" id="cal-right">
+        <div class="cal-header">
+          <div class="cal-title"></div>
+          <button class="nav-btn nav-next" aria-label="下一組月份" id="btnNext">›</button>
+        </div>
+        <div class="cal-week">
+          <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+        </div>
+        <div class="cal-grid"></div>
+      </div>
+    </div>
+
+    <!-- 選到日期後出現的時段/時間格 -->
+    <div class="time-section" id="timeSection" hidden>
+      <h3 class="time-title">選擇預約時間</h3>
+
+      <div class="period" data-period="morning">
+        <div class="period-label">上午</div>
+        <div class="slots" id="slots-morning"></div>
+      </div>
+
+      <div class="period" data-period="afternoon">
+        <div class="period-label">下午</div>
+        <div class="slots" id="slots-afternoon"></div>
+      </div>
+
+      <div class="period" data-period="evening">
+        <div class="period-label">晚上</div>
+        <div class="slots" id="slots-evening"></div>
+      </div>
+    </div>
+
+    <!-- 表單隱藏欄位 -->
+    <input type="hidden" id="selectedDate" name="selectedDate" value="">
+    <input type="hidden" id="selectedDateTime" name="selectedDateTime" value="">
+
+    <div class="submit-bar ms-6 mb-13 mt-8">
+      <button type="submit" class="btn-primary" id="submitBtn" disabled>送出預約</button>
+      <span class="hint">請先選日期，再選時間</span>
+    </div>
+  </div>
+</form>
+
+<script>
+  /* ========= 共用工具 ========= */
+  const fmtTitle = (y, m)=> `${y}年 ${m}月`;
+  const sameYMD = (a,b)=> a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate();
+  const toYMD = (d)=> `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const formatYMD = toYMD;
+  const joinDateTime = (dateStr, timeStr)=> `${dateStr}T${timeStr}`;
+  const parseTimeToDate = (dateStr, timeStr)=>{
+    const [y,m,d]=dateStr.split('-').map(Number);
+    const [hh,mm]=timeStr.split(':').map(Number);
+    return new Date(y, m-1, d, hh, mm, 0, 0);
+  };
+
+  function monthMatrix(year, month){
+    // month: 1-12
+    const first = new Date(year, month-1, 1);
+    const startWeekday = first.getDay();
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const prevDays = new Date(year, month-1, 0).getDate();
+
+    const cells=[];
+    for(let i=0;i<42;i++){
+      const diff = i - startWeekday;
+      let date, inMonth=true;
+      if(diff<0){ date=new Date(year, month-2, prevDays+diff+1); inMonth=false; }
+      else if(diff>=daysInMonth){ date=new Date(year, month-1, diff-daysInMonth+1); inMonth=false; }
+      else{ date=new Date(year, month-1, diff+1); }
+      cells.push({date,inMonth});
+    }
+    return cells;
+  }
+
+  /* ========= 月曆 ========= */
+  const calLeft = document.getElementById('cal-left');
+  const calRight = document.getElementById('cal-right');
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+
+  const selectedDateInput = document.getElementById('selectedDate');
+  const selectedDateTimeInput = document.getElementById('selectedDateTime');
+  const submitBtn = document.getElementById('submitBtn');
+
+  let base = new Date(); base.setDate(1);
+  let selected = null; // Date 物件
+
+  function renderCalendars(){
+    drawMonth(calLeft,  new Date(base));
+    drawMonth(calRight, new Date(base.getFullYear(), base.getMonth()+1, 1));
+  }
+
+  function drawMonth(card, firstDayOfMonth){
+    const y = firstDayOfMonth.getFullYear();
+    const m = firstDayOfMonth.getMonth()+1;
+
+    card.querySelector('.cal-title').textContent = fmtTitle(y, m);
+    const grid = card.querySelector('.cal-grid');
+    grid.innerHTML = '';
+
+    const today = new Date(); today.setHours(0,0,0,0);
+    const cells = monthMatrix(y, m);
+
+    cells.forEach(({date, inMonth})=>{
+      const el = document.createElement('div');
+      el.className = 'day';
+      el.textContent = date.getDate();
+
+      if(!inMonth) el.classList.add('is-other');
+      if(sameYMD(date, today)) el.classList.add('is-today');
+
+      if(inMonth){
+        el.classList.add('is-selectable');
+        el.addEventListener('click', ()=>{
+          // 清除舊選擇
+          document.querySelectorAll('.calendar-section .day.is-selected')
+            .forEach(x => x.classList.remove('is-selected'));
+          el.classList.add('is-selected');
+
+          selected = new Date(date);
+          const ymd = formatYMD(selected);
+          selectedDateInput.value = ymd;
+
+          // 通知時間區塊刷新
+          selectedDateInput.dispatchEvent(new Event('change'));
+        });
+      }else{
+        el.classList.add('is-disabled');
+      }
+
+      if(selected && sameYMD(selected, date)) el.classList.add('is-selected');
+      grid.appendChild(el);
+    });
+  }
+
+  btnPrev.addEventListener('click', ()=>{ base = new Date(base.getFullYear(), base.getMonth()-1, 1); renderCalendars(); });
+  btnNext.addEventListener('click', ()=>{ base = new Date(base.getFullYear(), base.getMonth()+1, 1); renderCalendars(); });
+
+  renderCalendars();
+
+  /* ========= 時段/時間格 ========= */
+
+  // 你可以在這裡客製時段
+  const DEFAULT_SLOTS = {
+    morning:  ["10:00","11:00","12:00"],
+    afternoon:["14:00","15:00","16:00","17:00","18:00"],
+    evening:  ["19:00","20:00","21:00"]
+  };
+
+  // 例外設定：停診或關閉個別時段（日期鍵為 YYYY-MM-DD）
+  const OVERRIDES = {
+    // "2025-10-05": { closed:true },
+    // "2025-10-06": { unavailable:["15:00","20:00"] }
+  };
+
+  const timeSection = document.getElementById('timeSection');
+  const containers = {
+    morning:   document.getElementById('slots-morning'),
+    afternoon: document.getElementById('slots-afternoon'),
+    evening:   document.getElementById('slots-evening'),
+  };
+
+  function renderTimeSlots(dateStr){
+    if(!dateStr){ timeSection.hidden = true; return; }
+    timeSection.hidden = false;
+
+    // 清掉舊選擇與隱藏值
+    selectedDateTimeInput.value = "";
+    submitBtn.disabled = true;
+
+    const override = OVERRIDES[dateStr] || {};
+    const now = new Date();
+    const isToday = (dateStr === toYMD(now));
+
+    Object.entries(DEFAULT_SLOTS).forEach(([period, times])=>{
+      const wrap = containers[period];
+      wrap.innerHTML = "";
+
+      times.forEach(t=>{
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'time-slot';
+        btn.textContent = t;
+
+        const isUnavailable = override.unavailable?.includes?.(t);
+        const passedToday = isToday && parseTimeToDate(dateStr, t) <= now;
+
+        if(override.closed || isUnavailable || passedToday){
+          btn.classList.add('is-disabled');
+          btn.disabled = true;
+        }else{
+          btn.addEventListener('click', ()=>{
+            document.querySelectorAll('.calendar-section .time-slot.is-selected')
+              .forEach(x => x.classList.remove('is-selected'));
+            btn.classList.add('is-selected');
+
+            selectedDateTimeInput.value = joinDateTime(dateStr, t);
+            submitBtn.disabled = false;
+          });
+        }
+        wrap.appendChild(btn);
+      });
+    });
+  }
+
+  // 當選到日期（由月曆寫入 hidden）時刷新時段
+  selectedDateInput.addEventListener('change', ()=>{
+    renderTimeSlots(selectedDateInput.value);
+  });
+
+  // （可選）表單送出攔截示範
+  document.getElementById('bookingForm').addEventListener('submit', (e)=>{
+    if(!selectedDateInput.value || !selectedDateTimeInput.value){
+      e.preventDefault();
+      alert('請先選擇日期與時間。');
+    }
+  });
+</script>
