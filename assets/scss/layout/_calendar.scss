@@ -1,61 +1,202 @@
-.calendar-container {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            text-align: center;
-            font-family: sans-serif;
-        }
-        .calendar-header {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #555;
-            font-weight: 300;
-        }
-        .calendar-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            table-layout: fixed;
-            color: #555;
-        }
-        .calendar-table th {
-            font-weight: normal;
-            font-size: 0.9rem;
-            text-align: center;
-            padding-bottom: 1rem;
-        }
-        .calendar-table td {
-            text-align: center;
-            padding: 0.5rem;
-        }
-        .calendar-day {
-            width: 14.28%; /* 100% / 7 days */
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-            transition: background-color 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            font-size: 1rem;
-            color: #888;
-        }
-        .calendar-day.active {
-            color: #333;
-        }
-        .calendar-day.highlight {
-            background-color: #f0e6da; /* 淺米色 */
-            border: 1px solid #e0d5c8;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-            color: #333;
-            font-weight: bold;
-        }
-        .calendar-day.highlight:hover {
-            background-color: #e8dccf;
-        }
-        .calendar-day:hover {
-            background-color: #f8f8f8;
-        }
-        .calendar-day.faded {
-            color: #ccc;
-        }
+// 共用顏色變數
+:root{
+    --brown:#D0BBA6;  /* 品牌咖 */
+    --ink:#333333;       /* 主文字 */
+    --muted:#6b7280;  /* 次要字 */
+    --line:#e5e7eb;   /* 邊線 */
+    --bg:#f7f7f6;     /* 週標背景 */
+    --hi:#A1BBC5;     /* 標題螢光底色 */
+  }
+
+
+
+// 預約方式
+
+.option-btn {
+      display: block;
+      font-weight: bold;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-align: center;
+      padding: 12px 0;
+      border-radius: 999px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* 線上諮商：白底 + 邊框 */
+    .btn-outline-brown {
+      border: 2px solid #A08C6F;
+      background-color: #fff;
+      color: #A08C6F;
+    }
+    .btn-outline-brown:hover {
+      border-color: #7A6D5D;
+      color: #7A6D5D;
+    }
+
+    /* 實體諮商：咖啡底 + 白字 */
+    .btn-brown {
+      border: 2px solid #A08C6F;
+      background-color: #A08C6F;
+      color: #fff;
+    }
+    // 已經選取了所以這個按鈕不用hove值
+    // .btn-brown:hover {background-color: #7A6D5D;border-color: #7A6D5D;}
+    
+    // 螢光筆設定
+    .pen{
+       
+        display:inline-block;
+        box-shadow:inset 0 -9px 0 var(--hi);
+        margin:0 0 16px;
+  }
+
+// 月曆
+
+
+
+  /* ====== 整個組件容器（避免干擾其他區塊） ====== */
+  .calendar-section{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC","Microsoft JhengHei",Arial,sans-serif;
+    color:var(--ink);
+    background:#fff;
+    padding:24px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+
+  /* 標題（螢光筆底） */
+  .calendar-section .highlight-title{
+    font-weight:700;
+    font-size:24px;
+    display:inline-block;
+    box-shadow:inset 0 -9px 0 var(--hi);
+    margin:0 0 16px;
+  }
+
+  /* ====== 月曆：雙月卡片 ====== */
+  .calendar-section .calendar-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+
+  .calendar-section .cal-card{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px 18px;
+  }
+
+  .calendar-section .cal-header{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 24px 16px;
+  }
+  .calendar-section .cal-title{
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:.5px;
+  }
+  .calendar-section .nav-btn{
+    position:absolute; top:50%; transform:translateY(-50%);
+    border:none; background:transparent;
+    width:32px; height:32px; border-radius:999px;
+    cursor:pointer; color:var(--muted);
+  }
+  .calendar-section .nav-prev{ left:0; }
+  .calendar-section .nav-next{ right:0; }
+  .calendar-section .nav-btn:hover{ background:#f1f2f3; }
+
+  .calendar-section .cal-week{
+    display:grid; grid-template-columns:repeat(7,1fr);
+    background:var(--bg);
+    border-radius:6px;
+    padding:10px 8px;
+    margin-bottom:8px;
+    color:#555; font-weight:600; font-size:14px;
+  }
+  .calendar-section .cal-week div{ text-align:center; }
+
+  .calendar-section .cal-grid{
+    display:grid; grid-template-columns:repeat(7,1fr);
+    gap:22px 26px;
+    padding:16px 8px 8px;
+    min-height:380px; /* 固高避免切換抖動 */
+  }
+  .calendar-section .day{
+    justify-self:center; align-self:start;
+    width:48px; height:48px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:10px; color:#333; user-select:none;
+  }
+  .calendar-section .day.is-other{ color:#d1d5db; }
+  .calendar-section .day.is-disabled{ color:#d9d9d9; pointer-events:none; }
+  .calendar-section .day.is-today{
+    outline:2px dashed rgba(160,140,111,.45);
+    outline-offset:3px;
+  }
+  .calendar-section .day.is-selectable{ cursor:pointer; }
+  .calendar-section .day.is-selectable:hover{
+    box-shadow:0 0 0 3px rgba(160,140,111,.15);
+  }
+  .calendar-section .day.is-selected{
+    background:var(--brown); color:#fff;
+  }
+
+  /* ====== 時段 / 時間格 ====== */
+  .calendar-section .time-section{
+    margin-top:28px;
+  }
+  .calendar-section .time-title{
+    font-weight:700; font-size:22px; color:#222; margin:0 0 16px;
+    display:inline-block; box-shadow:inset 0 -8px 0 var(--hi);
+  }
+  .calendar-section .period{ margin:18px 0; }
+  .calendar-section .period-label{ color:#374151; margin:10px 0; font-weight:600; }
+
+  /* Grid：桌面一列 5 個 */
+  .calendar-section .slots{
+    display:grid; gap:12px; grid-template-columns:repeat(5,1fr);
+  }
+  .calendar-section .time-slot{
+    border:1px solid #d1d5db; background:#fff; color:#374151;
+    border-radius:8px; padding:12px 0; text-align:center;
+    font-size:16px; cursor:pointer; transition:.15s;
+  }
+  .calendar-section .time-slot:hover{
+    border-color:var(--brown); box-shadow:0 0 0 3px rgba(160,140,111,.12);
+  }
+  .calendar-section .time-slot.is-selected{
+    background:var(--brown); color:#fff; border-color:var(--brown); box-shadow:none;
+  }
+  .calendar-section .time-slot.is-disabled{
+    color:#c9cdd2; border-color:#e6e8eb; background:#fafafa; cursor:not-allowed; box-shadow:none;
+  }
+
+  /* RWD：<= 860px 單月直排；<= 375px 時 3 欄、左右 12px */
+  @media (max-width:860px){
+    .calendar-section .calendar-wrap{ grid-template-columns:1fr; gap:16px; }
+    .calendar-section .cal-grid{ gap:18px 22px; min-height:340px; }
+    .calendar-section .day{ width:44px; height:44px; }
+  }
+  @media (max-width:375px){
+    .calendar-section{ padding:24px 12px; }
+    .calendar-section .slots{ grid-template-columns:repeat(3,1fr); }
+    .calendar-section .time-slot{ font-size:14px; padding:10px 0; }
+  }
+
+  /* 送出按鈕（示意，可改） */
+  .calendar-section .submit-bar{
+    margin-top:20px; display:flex; gap:12px; align-items:center;
+  }
+  .calendar-section .btn-primary{
+    background:var(--brown); color:#fff; border:1px solid var(--brown);
+    padding:10px 18px; border-radius:999px; cursor:pointer; font-weight:600;
+  }
+  .calendar-section .btn-primary:disabled{
+    opacity:.6; cursor:not-allowed;
+  }
+  .calendar-section .hint{ color:var(--muted); font-size:14px; }

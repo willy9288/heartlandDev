@@ -1,11 +1,25 @@
 /* 標籤的基本樣式 */
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  display: block;      
 }
 
 a {
   display: inline-block;
   color: inherit;
+}
+
+/* 建議的全域重置 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --header-h: 72px; // 預設
+}
+
+body {
+  padding-top: var(--header-h); 
 }

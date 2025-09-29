@@ -1,6 +1,10 @@
 //自定義 
 @import "/assets/scss/base/reset";
 @import "../../node_modules/bootstrap/scss/functions";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
 @import "./utils/variables";
 @import "./utils/variables-dark";
 @import "../../node_modules/bootstrap";
@@ -9,12 +13,15 @@
 
 @import './base/base';
 @import './component/button';
+@import './component/breadcrumb';
+@import './component/swiper';
 // 首頁
 @import './layout/header.scss';
 @import './layout/footer.scss';
 @import'layout/serve.scss';
 
 @import './pages/index.scss';
+@import './pages/post';
 
 // 預約
 @import'layout/_calendar';

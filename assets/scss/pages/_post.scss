@@ -1,0 +1,210 @@
+// 側邊攔
+.sidebar-nav {
+  .sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: 4px;
+  }
+
+  .nav {
+    padding-top: 12px;
+    gap: 4px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--bs-gray-600);
+    padding: 8px 12px;
+
+    &:hover {
+      color: var(--bs-primary-800);
+    }
+
+    &:active {
+      color: var(--bs-primary-800);
+    }
+  }
+}
+
+// 上方swiper
+
+/* 設計數值做成變數，方便之後依格線調整 */
+:root {
+  --ws-card-top: 100px;
+  --ws-card-left: 440px;
+  --ws-card-width: 636px;
+  --ws-card-radius: 20px;
+  --ws-gap: 48px; /* 圖片底下到按鈕的距離 */
+}
+
+/* 版面容器（可放到你的共用container上） */
+.workshop {
+}
+.ws-slide {
+  position: relative;
+  // max-width: 1280px; /* 看你的格線寬度可調 */
+  // margin-inline: auto;
+}
+
+/* 左側圖片 */
+.ws-hero {
+  margin: 0;
+}
+.ws-hero img {
+  display: block;
+  width: min(100%, 636px); /* 左邊大圖寬；可配合格線調整 */
+  height: auto;
+  border-radius: 20px;
+}
+
+/* 右側重疊卡片 */
+.ws-card {
+  position: absolute;
+  top: var(--ws-card-top);
+  left: var(--ws-card-left);
+  max-width: var(--ws-card-width);
+  border-radius: var(--ws-card-radius);
+  background: #fff;
+  // padding: 32px 36px 36px 0px;
+  padding-top: 32px;
+  padding-inline: 36px;
+  line-height: 1.8;
+}
+
+.ws-meta {
+  color: var(--bs-primary-1000);
+  font-size: 20px;
+  letter-spacing: 0.11em;
+}
+.ws-title {
+  color: var(--bs-gray-800);
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.5;
+  margin-top: 8px;
+  font-weight: 700;
+}
+.ws-desc {
+  color: var(--bs-gray-800);
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.11em;
+  margin: 24px 0px;
+}
+.ws-list {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--bs-gray-1000);
+  padding: 24px 36px;
+  background-color: var(--bs-primary-200);
+  margin-left: -36px;
+  margin-right: -36px;
+  border-radius: 0 0 var(--ws-card-radius) var(--ws-card-radius);
+}
+
+/* 圖片下方的左右切換 */
+
+/* RWD：小螢幕改為直排，不重疊 */
+@media (max-width: 1024px) {
+  :root {
+    --ws-card-left: 0px;
+    --ws-card-top: 0px;
+    --ws-card-width: auto;
+  }
+  .ws-card {
+    position: static;
+    margin-top: 16px; /* 圖片下方距離 */
+  }
+}
+
+/* 若內容卡片會溢出圖片右邊，可限制容器寬度避免裁切 */
+@media (min-width: 1025px) {
+  .ws-slide {
+    overflow: visible;
+  }
+}
+
+/* ===== 導航按鈕（不讓它覆蓋內容） ===== */
+.workshop-nav {
+  display: flex;
+  gap: 16px;
+  margin-top: var(--ws-gap);
+  /* 讓按鈕「對齊圖片的左邊」，而非整個容器 */
+  width: fit-content;
+  z-index: 1; /* 低於白卡即可 */
+}
+.workshop-nav .swiper-button-prev,
+.workshop-nav .swiper-button-next {
+  position: static !important; /* ★ 覆蓋 Swiper 預設的 absolute */
+  margin: 0;
+}
+
+/* 只要是要黏住的側欄 */
+.sidebar-nav.sticky-top {
+  top: var(--header-h); /* 關鍵：用同一個高度做偏移 */
+  // z-index: 1020; /* 蓋過內容避免被遮 */
+}
+
+/* 在 flex 容器（.row）裡，避免被拉伸導致黏不住 */
+.sidebar-nav {
+  align-self: flex-start;
+}
+
+// 文章列表
+.post {
+  margin-top: 72px;
+
+  .post-card {
+    margin-bottom: 20px;
+  }
+
+  .post-card-img {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .post-card-detail {
+    background: var(--bs-white);
+    padding-top: 20px;
+    padding-inline: 24px;
+    padding-bottom: 24px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .post-meta {
+    font-size: 16px;
+    color: var(--bs-primary-1000);
+    margin-bottom: 8px;
+  }
+
+  .post-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--bs-gray-800);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    -webkit-line-clamp: 1;
+  }
+}
+
+// pagination
+.page-item{
+  .btn{
+    color: var(--bs-gray-600);
+    font-size: 16px;
+    border-radius: 0;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 0px 7px;
+    border: none;
+  }
+
+  .active{
+    color: var(--bs-primary-600);
+  }
+}
