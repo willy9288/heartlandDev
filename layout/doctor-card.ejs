@@ -3,17 +3,17 @@
     <!-- 醫師頭像 -->
   <div class="text-center mb-4">
     <div class="doctor-avatar-wrapper mx-auto mb-3" style="width: 160px; height: 160px;">
-      <img src="<%= doctor.avatar %>" alt="<%= doctor.name %><%= doctor.title %>" class="w-100 h-100 rounded-circle object-fit-cover">
+      <img src="<%= doctor.avatar %>" alt="<%= doctor.name %><%= doctor.title %>" class="w-100 h-100  object-fit-cover">
     </div>
-    <% if (doctor.quote) { %>
+    <!-- <% if (doctor.quote) { %>
       <p class="text-gray-600 mb-2 fs-7"><%- doctor.quote %></p>
-    <% } %>
+    <% } %> -->
   </div>
 
     <!-- 醫師基本資訊 -->
   <div class="doctor-basic-info text-center mb-4">
     <h3 class="textSerifTC fs-4 text-primary-1000 mb-2"><%= doctor.name %></h3>
-    <p class="text-gray-600 mb-0"><%= doctor.title %></p>
+    <!-- <p class="text-gray-600 mb-0"><%= doctor.title %></p> -->
   </div>
 
     <!-- 專業領域 -->
