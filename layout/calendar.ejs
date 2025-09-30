@@ -298,11 +298,16 @@
     renderTimeSlots(selectedDateInput.value);
   });
 
-  // （可選）表單送出攔截示範
-  document.getElementById('bookingForm').addEventListener('submit', (e)=>{
-    if(!selectedDateInput.value || !selectedDateTimeInput.value){
-      e.preventDefault();
-      alert('請先選擇日期與時間。');
-    }
-  });
+  // 表單送出後統一跳轉
+document.getElementById('bookingForm').addEventListener('submit', (e)=>{
+  e.preventDefault(); // 阻止預設送出行為
+
+  if(!selectedDateInput.value || !selectedDateTimeInput.value){
+    alert('請先選擇日期與時間。');
+    return;
+  }
+
+  // 跳轉到指定頁面（這裡換成你要的網址）
+  window.location.href = "http://localhost:5173/heartlandDev/pages/payment.html";
+});
 </script>
