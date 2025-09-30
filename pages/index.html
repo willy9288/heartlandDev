@@ -16,10 +16,45 @@
     />
 
     <title>驛站好好休息諮商所</title>
+
+    <!-- top浮動按鈕 -->
+    <style>
+      /* top側邊浮動圖片按鈕 */
+    .floating-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 50%;
+      transform: translateY(50%);
+      z-index: 999;
+    }
+    .floating-btn img {
+      width: 150px;   /* top按鈕大小，可依需求調整 */
+      height: 150px;
+      border-radius: 20%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .floating-btn img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #block1 
+    #block2 
+    #block3 { background: #d4edda; }
+
+    </style>
   </head>
   <body>
+
+<!-- top浮動圖片按鈕 -->
+  <a href="#block1" class="floating-btn">
+    <img src="/assets/images/topbtn.jpg" alt="錨點按鈕">
+  </a>
+
+
     <%- include('./layout/header'); -%>
-    <section class="banner d-flex align-items-center">
+    <section class="banner d-flex align-items-center" id="block1">
       <div class="container text-center">
         <h1 class="banner-title h1 fw-bold text-white mb-8">
           日常中停靠．為心靈補給
