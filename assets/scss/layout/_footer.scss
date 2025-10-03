@@ -1,9 +1,29 @@
-.footer-logo-img{
+.footer-logo-img {
   width: 148px;
   height: 61px;
 }
 
-btn-icon{
+btn-icon {
   width: 32px;
   height: 32px;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-info {
+    margin-top: 20px;
+  }
+
+  .footer-right {
+    margin-top: 20px;
+  }
 }
