@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>驛站好好休息諮商所</title>
+
+    <!-- top浮動按鈕 -->
+    <style>
+      /* top側邊浮動圖片按鈕 */
+    .floating-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 50%;
+      transform: translateY(50%);
+      z-index: 999;
+    }
+    .floating-btn img {
+      width: 75px;   /* top按鈕大小，可依需求調整 */
+      height: 75px;
+      border-radius: 20%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .floating-btn img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #block1 
+    #block2 
+    #block3 { background: #d4edda; }
+
+    </style>
+    <script type="module" crossorigin src="/heartlandDev/assets/main-BNQPtT6v.js"></script>
+    <link rel="stylesheet" crossorigin href="/heartlandDev/assets/main-BsfYlVLs.css">
+  </head>
+  <body>
+
+<!-- top浮動圖片按鈕 -->
+  <a href="#block1" class="floating-btn">
+    <img src="data:image/png;base64,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" alt="錨點按鈕">
+  </a>
+
+
+    <header>
+  <nav
+    class="navbar navbar-expand-lg navbar-light fixed-top bg-primary-100 bprder-bottom-white py-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" href="index.html"
+        ><img
+          src="/heartlandDev/assets/Status_Default-BCcD-YDJ.png"
+          alt="logo"
+          class="logo-img"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto gap-5 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fs-5 link-primary-800" href="index.html"
+              >關於驛站</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 link-primary-800" href="serve.html"
+              >服務項目</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 link-primary-800" href="post.html"
+              >心靈工作坊</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 link-primary-800" href="doctor-team.html"
+              >諮商團隊</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 link-primary-800" href="room-photo.html"
+              >環境介紹</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 link-primary-800" href="index.html"
+              >常見QA</a
+            >
+          </li>
+        </ul>
+        <button type="button" class="btn btn-cta">預約查詢</button>
+      </div>
+    </div>
+  </nav>
+</header>
+    <section class="banner d-flex align-items-center" id="block1">
+      <div class="container text-center">
+        <h1 class="banner-title h1 fw-bold text-white mb-8">
+          日常中停靠．為心靈補給
+        </h1>
+        <p class="banner-subtitle fs-5 text-white mb-2">放慢腳步，說說心事</p>
+        <p class="banner-subtitle fs-5 text-white mb-2">
+          這裡是驛站，也是一處安心停靠的角落
+        </p>
+        <p class="banner-subtitle fs-5 text-white mb-2">
+          不用急著變好，只需先停下來
+        </p>
+        <p class="banner-subtitle fs-5 text-white mb-8">
+          我們陪你聽見內心的聲音
+        </p>
+        <div class="social d-flex justify-content-center align-items-center">
+          <p class="fs-5 text-white me-8">聯絡我們</p>
+          <a href="#" class="me-4"
+            ><img src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14.8633%209.35664V12.85C14.8633%2012.9402%2014.7945%2013.009%2014.7043%2013.009H14.1457C14.0898%2013.009%2014.0426%2012.9789%2014.0168%2012.9445L12.4141%2010.7832V12.8543C12.4141%2012.9445%2012.3453%2013.0133%2012.2551%2013.0133H11.6965C11.6062%2013.0133%2011.5375%2012.9445%2011.5375%2012.8543V9.36094C11.5375%209.27071%2011.6062%209.20196%2011.6965%209.20196H12.2508C12.298%209.20196%2012.3539%209.22774%2012.3797%209.27071L13.9824%2011.432V9.36094C13.9824%209.27071%2014.0512%209.20196%2014.1414%209.20196H14.7C14.7902%209.19766%2014.8633%209.27071%2014.8633%209.35235V9.35664ZM10.8371%209.19766H10.2785C10.1883%209.19766%2010.1195%209.26641%2010.1195%209.35664V12.85C10.1195%2012.9402%2010.1883%2013.009%2010.2785%2013.009H10.8371C10.9273%2013.009%2010.9961%2012.9402%2010.9961%2012.85V9.35664C10.9961%209.275%2010.9273%209.19766%2010.8371%209.19766ZM9.48789%2012.1238H7.95821V9.35664C7.95821%209.26641%207.88946%209.19766%207.79922%209.19766H7.24063C7.15039%209.19766%207.08164%209.26641%207.08164%209.35664V12.85C7.08164%2012.893%207.09453%2012.9273%207.12461%2012.9574C7.15469%2012.9832%207.18906%2013.0004%207.23203%2013.0004H9.475C9.56523%2013.0004%209.63398%2012.9316%209.63398%2012.8414V12.2828C9.63398%2012.2012%209.56523%2012.1238%209.48359%2012.1238H9.48789ZM17.8109%209.19766H15.5637C15.482%209.19766%2015.4047%209.26641%2015.4047%209.35664V12.85C15.4047%2012.9316%2015.4734%2013.009%2015.5637%2013.009H17.8066C17.8969%2013.009%2017.9656%2012.9402%2017.9656%2012.85V12.2871C17.9656%2012.1969%2017.8969%2012.1281%2017.8066%2012.1281H16.2812V11.5438H17.8066C17.8969%2011.5438%2017.9656%2011.475%2017.9656%2011.3848V10.8219C17.9656%2010.7316%2017.8969%2010.6629%2017.8066%2010.6629H16.2812V10.0742H17.8066C17.8969%2010.0742%2017.9656%2010.0055%2017.9656%209.91524V9.35664C17.9613%209.275%2017.8926%209.19766%2017.8066%209.19766H17.8109ZM22.8717%205.51328L22.8717%2018.5211C22.8674%2020.7211%2021.0628%2022.5043%2018.8585%2022.5L5.9789%2022.5344C3.7789%2022.5301%201.9957%2020.7211%202%2018.5211L1.99999%205.51328C2.00429%203.31328%203.81327%201.53008%206.01327%201.53437L18.8928%201.5C21.0928%201.5043%2022.876%203.30898%2022.8717%205.51328ZM20.475%2010.9336C20.475%207.35001%2016.8785%204.43243%2012.4656%204.43243C8.05274%204.43243%204.45626%207.35001%204.45626%2010.9336C4.45626%2014.1434%207.30508%2016.8375%2011.1551%2017.3488C12.0918%2017.5508%2011.9844%2017.8945%2011.7738%2019.1578C11.7395%2019.3598%2011.6105%2019.9484%2012.4656%2019.5918C13.3207%2019.2352%2017.0762%2016.8762%2018.7605%2014.9426C19.9207%2013.6664%2020.475%2012.373%2020.475%2010.9422V10.9336Z'%20fill='white'/%3e%3c/svg%3e" alt="Line"
+          /></a>
+          <a href="#" class="me-4"
+            ><img src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10.1125%209.92344C9.82968%2010.1011%209.58537%2010.3337%209.39399%2010.6075C9.20262%2010.8812%209.06808%2011.1905%208.99832%2011.5172C8.92857%2011.8438%208.92501%2012.1811%208.98787%2012.5092C9.05073%2012.8372%209.17872%2013.1493%209.36429%2013.427C9.54985%2013.7047%209.78921%2013.9424%2010.0682%2014.126C10.3472%2014.3096%2010.6602%2014.4355%2010.9887%2014.496C11.3172%2014.5566%2011.6544%2014.5506%2011.9806%2014.4786C12.3067%2014.4066%2012.6151%2014.2698%2012.8875%2014.0766C13.1703%2013.8989%2013.4146%2013.6663%2013.606%2013.3925C13.7974%2013.1188%2013.9319%2012.8095%2014.0017%2012.4828C14.0714%2012.1562%2014.075%2011.8189%2014.0121%2011.4908C13.9493%2011.1628%2013.8213%2010.8507%2013.6357%2010.573C13.4502%2010.2953%2013.2108%2010.0576%2012.9318%209.87396C12.6528%209.69035%2012.3398%209.56455%2012.0113%209.50399C11.6828%209.44344%2011.3456%209.44936%2011.0194%209.5214C10.6933%209.59344%2010.3849%209.73015%2010.1125%209.92344ZM16.7828%206.71719C16.5391%206.47344%2016.2437%206.28125%2015.9203%206.15469C15.0719%205.82188%2013.2203%205.83594%2012.025%205.85C11.8328%205.85%2011.6547%205.85469%2011.5%205.85469C11.3453%205.85469%2011.1625%205.85469%2010.9656%205.85C9.77031%205.83594%207.92812%205.81719%207.07969%206.15469C6.75625%206.28125%206.46563%206.47344%206.21719%206.71719C5.96875%206.96094%205.78125%207.25625%205.65469%207.57969C5.32188%208.42812%205.34063%2010.2844%205.35%2011.4797C5.35%2011.6719%205.35469%2011.85%205.35469%2012C5.35469%2012.15%205.35469%2012.3281%205.35%2012.5203C5.34063%2013.7156%205.32188%2015.5719%205.65469%2016.4203C5.78125%2016.7437%205.97344%2017.0344%206.21719%2017.2828C6.46094%2017.5312%206.75625%2017.7188%207.07969%2017.8453C7.92812%2018.1781%209.77969%2018.1641%2010.975%2018.15C11.1672%2018.15%2011.3453%2018.1453%2011.5%2018.1453C11.6547%2018.1453%2011.8375%2018.1453%2012.0344%2018.15C13.2297%2018.1641%2015.0719%2018.1828%2015.9203%2017.8453C16.2437%2017.7188%2016.5344%2017.5266%2016.7828%2017.2828C17.0312%2017.0391%2017.2188%2016.7437%2017.3453%2016.4203C17.6828%2015.5766%2017.6641%2013.7297%2017.65%2012.5297C17.65%2012.3328%2017.6453%2012.15%2017.6453%2011.9953C17.6453%2011.8406%2017.6453%2011.6625%2017.65%2011.4609C17.6641%2010.2656%2017.6828%208.41875%2017.3453%207.57031C17.2188%207.24687%2017.0266%206.95625%2016.7828%206.70781V6.71719ZM13.6375%208.80313C14.4859%209.37031%2015.0719%2010.2516%2015.2734%2011.25C15.475%2012.2484%2015.2641%2013.2891%2014.6969%2014.1375C14.4156%2014.5594%2014.0547%2014.9156%2013.6375%2015.1969C13.2203%2015.4781%2012.7469%2015.6703%2012.25%2015.7687C11.2516%2015.9656%2010.2109%2015.7594%209.3625%2015.1922C8.51406%2014.625%207.92812%2013.7437%207.72656%2012.7453C7.525%2011.7469%207.73594%2010.7063%208.29844%209.85781C8.86094%209.00938%209.74687%208.42344%2010.7453%208.22187C11.7437%208.02031%2012.7844%208.23125%2013.6328%208.79375H13.6375V8.80313ZM15.0062%208.74219C14.8609%208.64375%2014.7438%208.50312%2014.6734%208.33906C14.6031%208.175%2014.5891%207.99688%2014.6219%207.81875C14.6547%207.64062%2014.7437%207.48594%2014.8656%207.35938C14.9875%207.23281%2015.1516%207.14844%2015.325%207.11563C15.4984%207.08281%2015.6813%207.09687%2015.8453%207.16719C16.0094%207.2375%2016.15%207.35%2016.2484%207.49531C16.3469%207.64062%2016.3984%207.81406%2016.3984%207.99219C16.3984%208.10938%2016.375%208.22656%2016.3328%208.33438C16.2906%208.44219%2016.2203%208.54063%2016.1406%208.625C16.0609%208.70937%2015.9578%208.775%2015.85%208.82187C15.7422%208.86875%2015.625%208.89219%2015.5078%208.89219C15.3297%208.89219%2015.1562%208.84062%2015.0109%208.74219H15.0062ZM22%204.5C22%202.84531%2020.6547%201.5%2019%201.5H4C2.34531%201.5%201%202.84531%201%204.5V19.5C1%2021.1547%202.34531%2022.5%204%2022.5H19C20.6547%2022.5%2022%2021.1547%2022%2019.5V4.5ZM17.7344%2018.2344C16.8578%2019.1109%2015.7937%2019.3875%2014.5938%2019.4484C13.3562%2019.5187%209.64375%2019.5187%208.40625%2019.4484C7.20625%2019.3875%206.14219%2019.1109%205.26562%2018.2344C4.38906%2017.3578%204.1125%2016.2937%204.05625%2015.0938C3.98594%2013.8562%203.98594%2010.1438%204.05625%208.90625C4.11719%207.70625%204.38906%206.64219%205.26562%205.76562C6.14219%204.88906%207.21094%204.6125%208.40625%204.55625C9.64375%204.48594%2013.3562%204.48594%2014.5938%204.55625C15.7937%204.61719%2016.8578%204.88906%2017.7344%205.76562C18.6109%206.64219%2018.8875%207.70625%2018.9437%208.90625C19.0141%2010.1391%2019.0141%2013.8469%2018.9437%2015.0891C18.8828%2016.2891%2018.6109%2017.3531%2017.7344%2018.2297V18.2344Z'%20fill='white'/%3e%3c/svg%3e" alt="Line"
+          /></a>
+          <a href="#" class="me-4"
+            ><img src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%201.5C2.34531%201.5%201%202.84531%201%204.5V19.5C1%2021.1547%202.34531%2022.5%204%2022.5H8.60312V15.6656H6.12813V12H8.60312V10.4203C8.60312%206.3375%2010.45%204.44375%2014.4625%204.44375C15.2219%204.44375%2016.5344%204.59375%2017.0734%204.74375V8.0625C16.7922%208.03438%2016.3%208.01562%2015.6859%208.01562C13.7172%208.01562%2012.9578%208.76094%2012.9578%2010.6969V12H16.8766L16.2016%2015.6656H12.9531V22.5H19C20.6547%2022.5%2022%2021.1547%2022%2019.5V4.5C22%202.84531%2020.6547%201.5%2019%201.5H4Z'%20fill='white'/%3e%3c/svg%3e" alt="Line"
+          /></a>
+          <a href="#" class="me-4"
+            ><img src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14.2188%2012.0094L9.75625%209.47344V14.5453L14.2188%2012.0094ZM19%201.5H4C2.34531%201.5%201%202.84531%201%204.5V19.5C1%2021.1547%202.34531%2022.5%204%2022.5H19C20.6547%2022.5%2022%2021.1547%2022%2019.5V4.5C22%202.84531%2020.6547%201.5%2019%201.5ZM19.675%207.87969C20.0312%209.22031%2020.0312%2012.0141%2020.0312%2012.0141C20.0312%2012.0141%2020.0312%2014.8078%2019.675%2016.1437C19.4781%2016.8844%2018.9016%2017.4422%2018.1656%2017.6391C16.8391%2018%2011.5%2018%2011.5%2018C11.5%2018%206.16094%2018%204.83438%2017.6437C4.09844%2017.4469%203.52187%2016.8891%203.325%2016.1484C2.96875%2014.8078%202.96875%2012.0141%202.96875%2012.0141C2.96875%2012.0141%202.96875%209.21563%203.325%207.87969C3.52187%207.13906%204.09844%206.55781%204.83438%206.36094C6.16094%206%2011.5%206%2011.5%206C11.5%206%2016.8391%206%2018.1656%206.36094C18.9016%206.55781%2019.4781%207.13906%2019.675%207.87969Z'%20fill='white'/%3e%3c/svg%3e" alt="Line"
+          /></a>
+        </div>
+      </div>
+      <img
+        src="data:image/svg+xml,%3csvg%20width='1920'%20height='337'%20viewBox='0%200%201920%20337'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1920%20337H0V0C0.000142395%2086.5751%2058.2607%20162.235%20142.846%20181.971C339.045%20227.746%20697.428%20301.914%20960%20301.914C1222.57%20301.914%201580.96%20227.746%201777.15%20181.971C1861.74%20162.235%201920%2086.5751%201920%200V337Z'%20fill='white'/%3e%3c/svg%3e"
+        alt=""
+        aria-hidden="true"
+        class="banner-curve"
+      />
+    </section>
+ <!-- sheena編輯區 -->
+<!-- 服務項目 Section -->
+  <div class="container my-100">
+
+    <!-- 標題 -->
+    <h2 class="text-center fw-semibold  mb-52 text-primary-1000 ">服務項目</h2>
+
+    <!-- 成人個別諮商 -->
+      <div class="row row-cols-1 row-cols-lg-2 align-items-center ser-container gx-6 gy-9 mb-48 ">
+      <div class="col align-items-center">
+        <img class="ser-ill-container" src="/heartlandDev/assets/ill1-Crgmdnrp.png" alt="成人個別諮商插畫" class="img-fluid">
+      </div>
+    <!-- 區塊連結 -->
+     
+      <div class="col align-items-center " >
+        <h3 class="h3 fw-bold mb-3"><a href="doctors-adult.html">成人個別諮商</a></h3>
+        <a href="doctors-adult.html"><p class="text-gray-800 fs-5 mb-1 ">
+          在忙碌生活中照顧自己的心。
+        </p>
+        <p class="text-gray-800 fs-5 mb-6 custom-line-height-30 letter-spacing-22">
+          無論是焦慮、低潮、人際困擾，讓心理師陪你一起釐清與前行。
+          </p></a>
+        <div class="text-primary-1000 ">
+          <ul class="mb-5 bg-primary-200 ps-4 py-5 fs-5 custom-line-height-30 letter-spacing-22 custom-rounded-20 ">
+            <div class="sheena-list">
+            <li class="mb-1" >情緒議題、原生家庭議題</li>
+            <li class="mb-1 " >親密關係、人際關係</li>
+            <li class="mb-1 " >親職諮詢、與重要的人離別</li>
+            <li class="mb-1 " >生涯規劃、自我探索與成長</li>
+            </div>
+          </ul>
+        </div>
+      </div>
+      </div>
+
+    <!-- 伴侶諮商  -->
+      
+
+      <div class="row align-items-center ser-container gx-6 gy-9 mb-48 flex-lg-row flex-column-reverse">
+  <!-- 文字區塊 -->
+  <div class="col align-items-center">
+    <h3 class="h3 fw-bold mb-3">
+      <a href="doctors-couple.html">伴侶諮商</a>
+    </h3>
+
+    <a href="doctors-adult.html">
+      <p class="text-gray-800 fs-5 mb-1">
+        關係中難免有摩擦與沉默。
+      </p>
+      <p class="text-gray-800 fs-5 mb-6 custom-line-height-30 letter-spacing-22">
+        我們協助你們更好地聆聽、溝通，重新找到愛與理解的連結。
+      </p>
+    </a>
+
+    <div class="text-primary-1000">
+      <ul class="mb-5 bg-primary-200 ps-4 py-5 fs-5 custom-line-height-30 letter-spacing-22 custom-rounded-20">
+        <div class="sheena-list">
+          <li class="mb-1">溝通困難、情感疏離</li>
+          <li class="mb-1">衝突升溫、親密與性</li>
+          <li class="mb-1">育兒歧見、外遇與信任</li>
+          <li class="mb-1">分手或離婚調適</li>
+          <li class="mb-1">關係修復與重建</li>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 圖片區塊 -->
+  <div class="col align-items-center text-center">
+    <img
+      class="ser-ill-container img-fluid"
+      src="/heartlandDev/assets/ill2-C8MXyZZ6.png"
+      alt="伴侶諮商插畫"
+    >
+  </div>
+</div>
+
+    <!-- 兒童青少年 -->
+       <div class="row row-cols-1 row-cols-lg-2 align-items-center ser-container gx-6 gy-9 mb-48 ">
+      <div class="col align-items-center">
+        <img class="ser-ill-container" src="/heartlandDev/assets/ill3-CfvDBDG8.png" alt="成人個別諮商插畫" class="img-fluid">
+      </div>
+      <div class="col align-items-center " >
+        <h3 class="h3 fw-bold mb-3"><a href="doctors-child.html">兒童青少年</a></h3>
+        <a href="doctors-adult.html"><p class="text-gray-800 fs-5 mb-1 ">
+         孩子的情緒也需要被理解。
+        </p>
+        <p class="text-gray-800 fs-5 mb-6 custom-line-height-30 letter-spacing-22">
+         透過遊戲、對話、觀察，幫助孩子安心表達，家長放心陪伴。
+          </p>
+          </a>
+        <div class="text-primary-1000 ">
+          <ul class="mb-5 bg-primary-200 ps-4 py-5 fs-5 custom-line-height-30 letter-spacing-22 custom-rounded-20 ">
+            <div class="sheena-list">
+            <li class="mb-1" >情緒困擾、行為改變</li>
+            <li class="mb-1 " >學校適應、人際衝突</li>
+            <li class="mb-1 " >親子溝通、身體議題</li>
+            <li class="mb-1 " >自我認同、發展性創傷與安全感建立。</li>
+
+            </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+      </div>
+  </div>
+</section>
+
+
+  
+    <!-- 輪播區 -->
+    <section class="hero-section-gradient px-0 py-0" >
+      <div class="container mx-lg-auto py-lg-12 py-9" style="padding-top: 100px; padding-bottom: 100px;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <!-- <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div> -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class=" position-relative rounded-2">
+                <img class="d-block rounded-2" style="margin-bottom: 28px; width: 856px;" src="/heartlandDev/assets/new1-BdeaqF3K.png" alt="">
+                <!-- 手機版才出現文字 -->
+                <div class="d-lg-none d-block">
+                  <p class="mb-2 lh-lg" style="letter-spacing: 0.09em; color: #7A6D5D;">2025/09/28（六）13:30–16:00</p>
+                  <h4 class="lg-base mb-5 fw-bold textSerifTC" style="letter-spacing: 0.12em; color: #333333;">給自己的安靜時光：情緒覺察與寫作工作坊</h4>
+                  <p class="lh-lg mb-1" style="letter-spacing: 0.09em; color: #333333;">透過書寫，與內在聲音重新對話</p>
+                  <p class="lh-lg mb-6" style="letter-spacing: 0.09em; color: #333333;">在柔和空間中進行簡單引導與自由書寫，無需寫作經驗，心理師帶領你用文字探索內在感受，適合想自我照顧、暫時離開混亂日常的人參加。</p>
+                  <div class="lh-lg py-5 px-6 rounded-2" style="font-size: 14px; background-color: #F3EEE8; color: #7A6D5D;">
+                    <p class="mb-1" style="letter-spacing: 0.07em;">880 元（含紙筆材料、茶點）</p>
+                    <p style="letter-spacing: 0.07em;">體驗型工作坊・適合初次接觸心理探索者</p>
+                  </div>
+                </div>
+                <div class="bg-white position-absolute rounded-top-2" style="width: 39rem; left: 660px; top: 100px;">
+                  <div class="pt-7 pb-6" style="padding-right: 36px; padding-left: 36px;">                  
+                    <p class="mb-2" style="font-size: 20px; letter-spacing: 0.11em; color: #655A4A;">2025/09/28（六）13:30–16:00</p>
+                    <a href="post.html"><h3 class="title mb-6 textSerifTC fw-bold" style="letter-spacing: 0.13em;">給自己的安靜時光：情緒覺察與寫作工作坊</h3></a>
+                    <a href="post.html"><p class="mb-2" style="font-size: 20px; letter-spacing: 0.11em;">透過書寫，與內在聲音重新對話</p></a>
+                    <a href="post.html"><p class="mb-6" style="font-size: 20px; letter-spacing: 0.11em;">在柔和空間中進行簡單引導與自由書寫，無需寫作經驗，心理師帶領你用文字探索內在感受，適合想自我照顧、暫時離開混亂日常的人參加。</p></a>                 
+                  </div>
+                </div>
+                <div class="bgbrown200 position-absolute rounded-bottom-2" style="width: 39rem; left: 660px; top: 404px;">
+                  <div class="py-6" style="padding-left: 36px; color: #7A6D5D;">
+                    <a href="post.html"><p class="mb-1" style="line-height: 30px; font-size: 20px; letter-spacing: 0.11em;">880 元（含紙筆材料、茶點）</p></a>
+                    <a href="post.html"><p class="" style="line-height: 30px; font-size: 20px; letter-spacing: 0.11em;">體驗型工作坊・適合初次接觸心理探索者</p></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class=" position-relative rounded-2">
+                <img class="d-block rounded-2" style="margin-bottom: 28px; width: 856px;" src="/heartlandDev/assets/new2-BOTtgPPy.png" alt="">
+                <!-- 手機版才出現文字 -->
+                <div class="d-lg-none d-block">
+                  <p class="mb-2 lh-lg" style="letter-spacing: 0.09em; color: #7A6D5D;">最新一集 YouTube 上線｜驛站療癒頻道</p>
+                  <h4 class="lg-base mb-5 fw-bold textSerifTC" style="letter-spacing: 0.12em; color: #333333;">當你覺得「沒有力氣」的時候，可以怎麼陪伴自己？</h4>
+                  <a href="post.html"><p class="lh-lg mb-1" style="letter-spacing: 0.09em; color: #333333;">這集邀請你一起練習：不勉強、不責備</p></a>
+                  <p class="lh-lg mb-6" style="letter-spacing: 0.09em; color: #333333;">我們和兩位諮商師一起聊聊「沒有力氣」的狀態——那不是你懶惰或不夠好，而是身心正在告訴你：你已經很努力了。讓我們一起練習在低潮中，溫柔地陪伴自己</p>
+                  <div class="lh-lg py-5 px-6 rounded-2" style="font-size: 14px; background-color: #F3EEE8; color: #7A6D5D;">
+                    <p class="mb-1" style="letter-spacing: 0.07em;">郭承修與楊品如諮商師陪你聊聊天</p>
+                    <p style="letter-spacing: 0.07em;">給正在撐著的你，一點溫柔的陪伴。</p>
+                  </div>
+                </div> 
+                <div class="bg-white position-absolute rounded-top-2" style="width: 39rem; left: 660px; top: 100px;">
+                  <div class="pt-7 pb-6" style="padding-right: 36px; padding-left: 36px;">                  
+                    <a href="post.html"><p class=" mb-2" style="font-size: 20px; letter-spacing: 0.11em; color: #655A4A;">最新一集 YouTube 上線｜驛站療癒頻道</p></a>
+                    <a href="post.html"><h3 class="-title mb-6 textSerifTC fw-bold" style="letter-spacing: 0.13em;">當你覺得「沒有力氣」的時候，可以怎麼陪伴自己？</h3></a>
+
+                    <a href="post.html"><p class=" mb-2" style="font-size: 20px; letter-spacing: 0.11em;">這集邀請你一起練習：不勉強、不責備</p></a>
+
+                    <a href="post.html"><p class=" mb-6" style="font-size: 20px; letter-spacing: 0.11em;">我們和兩位諮商師一起聊聊「沒有力氣」的狀態——那不是你懶惰或不夠好，而是身心正在告訴你：你已經很努力了。讓我們一起練習在低潮中，溫柔地陪伴自己</p></a>               
+                  </div>
+                </div>
+                <div class="bgbrown200 position-absolute rounded-bottom-2" style="width: 39rem; left: 660px; top: 404px;">
+                  <div class="py-6" style="padding-left: 32px; color: #7A6D5D;">
+                    <a href="post.html"><p class="mb-1" style="line-height: 30px; font-size: 20px; letter-spacing: 0.11em;">郭承修與楊品如諮商師陪你聊聊天</p></a>
+
+                    <a href="post.html"><p class="" style="line-height: 30px; font-size: 20px; letter-spacing: 0.11em;">給正在撐著的你，一點溫柔的陪伴。</p></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class=" position-relative rounded-2">
+                <img class="d-block rounded-2" style="margin-bottom: 28px; width: 856px;" src="/heartlandDev/assets/new3-CV49cRee.png" alt="">
+                <!-- 手機版才出現文字 -->
+                <div class="d-lg-none d-block">
+                  <p class="mb-2 lh-lg" style="letter-spacing: 0.09em; color: #7A6D5D;">驛站週報 2025/08/1</p>
+                  <h4 class="lg-base mb-5 fw-bold textSerifTC" style="letter-spacing: 0.12em; color: #333333;">兩性關係</h4>
+                  <p class="lh-lg mb-1" style="letter-spacing: 0.09em; color: #333333;">當關係出現裂痕：關於外遇，我們怎麼理解？</p>
+                  <p class="lh-lg mb-11" style="letter-spacing: 0.09em; color: #333333;">不是定罪，而是理解；不是急著選擇，而是練習聽見內心。關係的痛，從不是一個人造成的故事。</p>
+                  <div class="lh-lg py-5 px-6 rounded-2" style="font-size: 14px; background-color: #F3EEE8; color: #7A6D5D;">
+                    <p class="mb-1" style="letter-spacing: 0.07em;">陳彥如諮商師撰文</p>
+                    <p style="letter-spacing: 0.07em;">陪你看見裂縫裡的情緒、需求與選擇空間。</p>
+                  </div>
+                </div> 
+                <div class="bg-white position-absolute rounded-top-2" style="width: 39rem; left: 660px; top: 100px;">
+                  <div class="pt-7 pb-6" style="padding-left: 36px; padding-right: 36px;">                  
+                    <a href="post.html"><p class=" mb-2" style="font-size: 20px; letter-spacing: 0.11em; color: #655A4A;">驛站週報 2025/08/1</p></a>
+                    <h3 class="-title mb-6 textSerifTC fw-bold" style="letter-spacing: 0.13em;">兩性關係</h3>
+                    <a href="post.html"><p class="mb-2" style="font-size: 20px; letter-spacing: 0.11em;">當關係出現裂痕：關於外遇，我們怎麼理解？</p></a>
+                    <a href="post.html"><p class="mb-6" style="font-size: 20px; letter-spacing: 0.11em;">不是定罪，而是理解；不是急著選擇，而是練習聽見內心。關係的痛，從不是一個人造成的故事。</p></a>                 
+                  </div>
+                </div>
+                <div class="bgbrown200 position-absolute rounded-bottom-2" style="width: 39rem; left: 660px; top: 349px;">
+                  <div class="py-6" style="padding-left: 36px; color: #7A6D5D;">
+                    <a href="post.html"><p class="mb-1" style="line-height: 30px; font-size: 20px; letter-spacing: 0.11em;">陳彥如諮商師撰文</p></a>
+                    <a href="post.html"><p class="" style="line-height: 30px; font-size: 20px; letter-spacing: 0.11em;">陪你看見裂縫裡的情緒、需求與選擇空間。</p></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div> 
+      </div>
+    </section>
+
+    <!-- 諮商團隊 -->
+     <section class="doctor-team-section">
+    <div class="container">
+        <div class="section-header text-center mb-52">
+            <h2 class="section-title textSerifTC">諮商團隊</h2>
+            <!-- <p class="section-subtitle">我們的專業醫療團隊致力於提供最優質的醫療服務，每位醫師都具備豐富的臨床經驗與專業認證</p> -->
+        </div>
+        
+        <div class="row gy-4">
+            <!-- 醫師卡片 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="doctor-card modern-card custom-rounded-20 h-100">
+                    
+                    <!-- 背景圓形區域 -->
+                    <div class="doctor-background-circle">
+                        <div class="doctor-avatar-container">
+                            <img src="/heartlandDev/assets/p1-D8ixsjQD.png" alt="蘇怡文醫師" class="doctor-avatar-modern">
+                        </div>
+                        <!-- 激勵標語 -->
+                        <!-- <div class="doctor-quote">
+                            你不需要完美，才能被理解與接住。
+                        </div> -->
+                    </div>
+                    
+                    <!-- 醫師資訊區域 -->
+                    <div class="doctor-content">
+                        <div class="doctor-info text-center mb-24">
+                            <h3 class="doctor-name textSerifTC mb-2">蘇怡文</h3>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">專長領域</p>
+                            <p class="sheena-list">成人壓力調適、職涯焦慮、自我認同探索</p>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">學歷</p>
+                            <ul class="sheena-list">
+                                <li>國立台灣師範大學 教育心理與輔導碩士</li>
+                                <li>美國 Columbia University 心理諮商研究所進修</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 按鈕區域 -->
+                        <div class="doctor-actions">
+                            <!-- <a href="doctor-detail.html" class="btn btn-outline-secondary btn-detail">詳細資料</a> -->
+                            <a href="doctor-booking-p1.html" class="btn btn-cta btn-appointment">立即預約</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 醫師卡片 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="doctor-card modern-card custom-rounded-20 h-100">
+                    <!-- <div class="doctor-tag">補助</div> -->
+                    <!-- 背景圓形區域 -->
+                    <div class="doctor-background-circle">
+                        <div class="doctor-avatar-container">
+                            <img src="/heartlandDev/assets/2noicon-ByZxxECu.png" alt="郭承修醫師" class="doctor-avatar-modern">
+                        </div>
+                        <!-- 激勵標語 -->
+                        <!-- <div class="doctor-quote">
+                            真正的勇敢，是願意對自己誠實的那一刻開始。
+                        </div> -->
+                    </div>
+                    
+                    <!-- 醫師資訊區域 -->
+                    <div class="doctor-content">
+                        <div class="doctor-info text-center mb-24">
+                            <h3 class="doctor-name textSerifTC mb-2">郭承修</h3>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">專長領域</p>
+                            <p class="sheena-list">情緒障礙、創傷復原、自我關係建立</p>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">學歷</p>
+                            <ul class="sheena-list">
+                                <li>輔仁大學 心理學系暨臨床心理碩士</li>
+                                <li>澳洲墨爾本大學 客座研究計畫參與者（心理創傷與復原）</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 按鈕區域 -->
+                        <div class="doctor-actions">
+                            <!-- <a href="/appointment/chen" class="btn btn-outline-secondary btn-detail">詳細資料</a> -->
+                            <a href="doctor-booking-p2.html" class="btn btn-cta btn-appointment">立即預約</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 醫師卡片 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="doctor-card modern-card custom-rounded-20 h-100">
+                    <!-- <div class="doctor-tag">補助</div> -->
+                    <!-- 背景圓形區域 -->
+                    <div class="doctor-background-circle">
+                        <div class="doctor-avatar-container">
+                            <img src="/heartlandDev/assets/p3-C2uHhN4j.png" alt="陳彥如醫師" class="doctor-avatar-modern">
+                        </div>
+                        <!-- 激勵標語 -->
+                        <!-- <div class="doctor-quote">
+                            關係裡沒有對錯，只有兩個人渴望被愛的方式。
+                        </div> -->
+                    </div>
+                    
+                    <!-- 醫師資訊區域 -->
+                    <div class="doctor-content">
+                        <div class="doctor-info text-center mb-24">
+                            <h3 class="doctor-name textSerifTC mb-2">陳彥如</h3>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">專長領域</p>
+                            <p class="sheena-list">親密關係、伴侶溝通、婚姻修復</p>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">學歷</p>
+                            <ul class="sheena-list">
+                                <li>國立政治大學 輔導與諮商碩士</li>
+                                <li>加拿大卑詩大學(UBC)進修家庭治療訓練</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 按鈕區域 -->
+                        <div class="doctor-actions">
+                            <!-- <a href="/appointment/chen" class="btn btn-outline-secondary btn-detail">詳細資料</a> -->
+                            <a href="doctor-booking-p3.html" class="btn btn-cta btn-appointment">立即預約</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 醫師卡片 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="doctor-card modern-card custom-rounded-20 h-100">
+                    <!-- <div class="doctor-tag">補助</div> -->
+                    <!-- 背景圓形區域 -->
+                    <div class="doctor-background-circle">
+                        <div class="doctor-avatar-container">
+                            <img src="/heartlandDev/assets/p4-CVdExLuO.png" alt="劉育成醫師" class="doctor-avatar-modern">
+                        </div>
+                        <!-- 激勵標語 -->
+                        <!-- <div class="doctor-quote">
+                            一起走過困難，是我們給關係最深的承諾。
+                        </div> -->
+                    </div>
+                    
+                    <!-- 醫師資訊區域 -->
+                    <div class="doctor-content">
+                        <div class="doctor-info text-center mb-24">
+                            <h3 class="doctor-name textSerifTC mb-2">劉育成</h3>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">專長領域</p>
+                            <p class="sheena-list">家庭衝突、親密關係、跨文化伴侶</p>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">學歷</p>
+                            <ul class="sheena-list">
+                                <li>高雄醫學大學 臨床心理研究所碩士</li>
+                                <li>德國海德堡大學 家庭心理動力學進修認證</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 按鈕區域 -->
+                        <div class="doctor-actions">
+                            <!-- <a href="/appointment/chen" class="btn btn-outline-secondary btn-detail">詳細資料</a> -->
+                            <a href="doctor-booking-p4.html" class="btn btn-cta btn-appointment">立即預約</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 醫師卡片 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="doctor-card modern-card custom-rounded-20 h-100">
+                    <!-- <div class="doctor-tag">補助</div> -->
+                    <!-- 背景圓形區域 -->
+                    <div class="doctor-background-circle">
+                        <div class="doctor-avatar-container">
+                            <img src="/heartlandDev/assets/5noicon-DyGTnFln.png" alt="楊品如醫師" class="doctor-avatar-modern">
+                        </div>
+                        <!-- 激勵標語 -->
+                        <!-- <div class="doctor-quote">
+                            青春是一段迷路的旅程，而我在這裡陪你找到方向。
+                        </div> -->
+                    </div>
+                    
+                    <!-- 醫師資訊區域 -->
+                    <div class="doctor-content">
+                        <div class="doctor-info text-center mb-24">
+                            <h3 class="doctor-name textSerifTC mb-2">楊品如</h3>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">專長領域</p>
+                            <p class="sheena-list">青少年情緒困擾、校園適應、家庭溝通</p>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">學歷</p>
+                            <ul class="sheena-list">
+                                <li>東吳大學 心理學系碩士</li>
+                                <li>日本早稻田大學 教育心理課程交換一年</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 按鈕區域 -->
+                        <div class="doctor-actions">
+                            <!-- <a href="/appointment/chen" class="btn btn-outline-secondary btn-detail">詳細資料</a> -->
+                            <a href="doctor-booking-p5.html" class="btn btn-cta btn-appointment">立即預約</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 醫師卡片 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="doctor-card modern-card custom-rounded-20 h-100">
+                    <!-- <div class="doctor-tag">補助</div> -->
+                    <!-- 背景圓形區域 -->
+                    <div class="doctor-background-circle">
+                        <div class="doctor-avatar-container">
+                            <img src="/heartlandDev/assets/p6-C93OWaaY.png" alt="林芷涵醫師" class="doctor-avatar-modern">
+                        </div>
+                        <!-- 激勵標語 -->
+                        <!-- <div class="doctor-quote">
+                            每個孩子都有他說不出口的語言，我願意慢慢聽懂。
+                        </div> -->
+                    </div>
+                    
+                    <!-- 醫師資訊區域 -->
+                    <div class="doctor-content">
+                        <div class="doctor-info text-center mb-24">
+                            <h3 class="doctor-name textSerifTC mb-2">林芷涵</h3>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">專長領域</p>
+                            <p class="sheena-list">兒童情緒表達、專注力訓練、親職教養策略</p>
+                        </div>
+                        
+                        <div class="doctor-specialties mb-24">
+                            <p class="doctor-title mb-0">學歷</p>
+                            <ul class="sheena-list">
+                                <li>中原大學 諮商心理學碩士</li>
+                                <li>英國 University of Edinburgh 遊戲治療進修證書</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 按鈕區域 -->
+                        <div class="doctor-actions">
+                            <!-- <a href="/appointment/chen" class="btn btn-outline-secondary btn-detail">詳細資料</a> -->
+                            <a href="doctor-booking-p6.html" class="btn btn-cta btn-appointment">立即預約</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- 環境 -->
+ <section class="photo py-100 bg-primary-100">
+      <div class="container text-center">
+        <h2 class="photo-title h2 fw-bold mb-52">看看我們的空間</h2>
+
+        <!-- Swiper -->
+        <div class="swiper photo-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="/heartlandDev/assets/%E5%AF%AC%E6%95%9E%E7%9A%84%E8%BF%8E%E8%B3%93%E7%A9%BA%E9%96%93-Rp62IICA.png"
+                  alt="寬敞的迎賓空間"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">寬敞的迎賓空間</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="/heartlandDev/assets/%E8%87%AA%E7%84%B6%E6%8E%A1%E5%85%89%E7%9A%84%E8%88%92%E9%81%A9%E7%92%B0%E5%A2%83-v1NtmQCK.png"
+                  alt="自然採光的舒適環境"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">自然採光的舒適環境</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="/heartlandDev/assets/%E6%98%8E%E4%BA%AE%E8%88%92%E9%81%A9%E7%9A%84%E8%AB%AE%E5%95%86%E7%A9%BA%E9%96%93-RSsuC8ZW.png"
+                  alt="明亮舒適的諮商室"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">明亮舒適的諮商室</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="/heartlandDev/assets/environment1-D2SrhdOU.png"
+                  alt="柔和的光影氛圍"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">柔和的光影氛圍</h6>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="photo-item text-start">
+                <img
+                  src="/heartlandDev/assets/environment3-hpbMXkvq.png"
+                  alt="純淨的雅緻空間"
+                />
+                <h6 class="mt-4 fs-4 fw-bold">純淨的雅緻空間</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 導航按鈕，放在 swiper 外面 -->
+        <div class="photo-nav d-flex gap-4 mt-6">
+           <!-- 導航按鈕 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-primary-100 py-52">
+  <div class="container">
+    <div class="footer d-flex justify-content-between align-items-md-center align-items-start">
+      <!--左側資訊-->
+      <div class="footer-left d-flex align-items-md-center align-items-start">
+        <img
+          src="/heartlandDev/assets/Status_Default-BCcD-YDJ.png"
+          alt="logo"
+          class="footer-logo-img me-44"
+        />
+        <div class="footer-info">
+          <p class="fs-5 lh-lg text-gray-400 mb-1">電話 04-323-1234</p>
+          <p class="fs-5 lh-lg text-gray-400">地址 411臺中市太平區福興街21號</p>
+        </div>
+      </div>
+      <!--右側social media-->
+      <div class="footer-right d-flex align-items-center gap-3">
+        <a href="#"
+          ><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19.8177%2011.809V16.4668C19.8177%2016.5871%2019.726%2016.6788%2019.6057%2016.6788H18.8609C18.7865%2016.6788%2018.7234%2016.6387%2018.6891%2016.5929L16.5521%2013.7111V16.4726C16.5521%2016.5929%2016.4604%2016.6845%2016.3401%2016.6845H15.5953C15.475%2016.6845%2015.3833%2016.5929%2015.3833%2016.4726V11.8147C15.3833%2011.6944%2015.475%2011.6028%2015.5953%2011.6028H16.3344C16.3974%2011.6028%2016.4719%2011.6371%2016.5062%2011.6944L18.6432%2014.5762V11.8147C18.6432%2011.6944%2018.7349%2011.6028%2018.8552%2011.6028H19.6C19.7203%2011.597%2019.8177%2011.6944%2019.8177%2011.8033V11.809ZM14.4495%2011.597H13.7047C13.5844%2011.597%2013.4927%2011.6887%2013.4927%2011.809V16.4668C13.4927%2016.5871%2013.5844%2016.6788%2013.7047%2016.6788H14.4495C14.5698%2016.6788%2014.6615%2016.5871%2014.6615%2016.4668V11.809C14.6615%2011.7002%2014.5698%2011.597%2014.4495%2011.597ZM12.6505%2015.4986H10.6109V11.809C10.6109%2011.6887%2010.5193%2011.597%2010.399%2011.597H9.65417C9.53386%2011.597%209.44219%2011.6887%209.44219%2011.809V16.4668C9.44219%2016.5241%209.45938%2016.57%209.49948%2016.6101C9.53959%2016.6444%209.58542%2016.6674%209.64271%2016.6674H12.6333C12.7536%2016.6674%2012.8453%2016.5757%2012.8453%2016.4554V15.7106C12.8453%2015.6017%2012.7536%2015.4986%2012.6448%2015.4986H12.6505ZM23.7479%2011.597H20.7516C20.6427%2011.597%2020.5396%2011.6887%2020.5396%2011.809V16.4668C20.5396%2016.5757%2020.6312%2016.6788%2020.7516%2016.6788H23.7422C23.8625%2016.6788%2023.9542%2016.5871%2023.9542%2016.4668V15.7163C23.9542%2015.596%2023.8625%2015.5043%2023.7422%2015.5043H21.7083V14.7252H23.7422C23.8625%2014.7252%2023.9542%2014.6335%2023.9542%2014.5132V13.7627C23.9542%2013.6424%2023.8625%2013.5507%2023.7422%2013.5507H21.7083V12.7658H23.7422C23.8625%2012.7658%2023.9542%2012.6741%2023.9542%2012.5538V11.809C23.9484%2011.7002%2023.8568%2011.597%2023.7422%2011.597H23.7479ZM30.4956%206.68453L30.4957%2024.0283C30.4899%2026.9616%2028.0837%2029.3392%2025.1446%2029.3335L7.97187%2029.3793C5.03854%2029.3736%202.66094%2026.9616%202.66667%2024.0283L2.66666%206.68453C2.67239%203.7512%205.08436%201.3736%208.01769%201.37933L25.1904%201.3335C28.1238%201.33923%2030.5014%203.74547%2030.4956%206.68453ZM27.3%2013.9116C27.3%209.1335%2022.5047%205.2434%2016.6208%205.2434C10.737%205.2434%205.94168%209.1335%205.94168%2013.9116C5.94168%2018.1913%209.74011%2021.7835%2014.8734%2022.4653C16.1224%2022.7345%2015.9792%2023.1929%2015.6984%2024.8772C15.6526%2025.1465%2015.4807%2025.9314%2016.6208%2025.4559C17.7609%2024.9804%2022.7682%2021.8351%2025.0141%2019.2569C26.5609%2017.5554%2027.3%2015.8309%2027.3%2013.9231V13.9116Z'%20fill='%23A08C6F'/%3e%3c/svg%3e" alt="Line"
+        /></a>
+        <a href="#"
+          ><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.4833%2012.5647C13.1062%2012.8017%2012.7805%2013.1118%2012.5253%2013.4768C12.2701%2013.8418%2012.0908%2014.2542%2011.9977%2014.6897C11.9047%2015.1253%2011.9%2015.575%2011.9838%2016.0124C12.0676%2016.4498%2012.2383%2016.8659%2012.4857%2017.2362C12.7331%2017.6065%2013.0523%2017.9234%2013.4243%2018.1682C13.7963%2018.413%2014.2136%2018.5808%2014.6516%2018.6615C15.0895%2018.7422%2015.5392%2018.7344%2015.9741%2018.6383C16.4089%2018.5422%2016.8201%2018.36%2017.1833%2018.1022C17.5604%2017.8653%2017.8862%2017.5552%2018.1413%2017.1902C18.3965%2016.8252%2018.5759%2016.4128%2018.6689%2015.9773C18.7619%2015.5417%2018.7666%2015.092%2018.6828%2014.6546C18.599%2014.2172%2018.4283%2013.8011%2018.1809%2013.4308C17.9335%2013.0605%2017.6144%2012.7436%2017.2424%2012.4988C16.8703%2012.254%2016.453%2012.0862%2016.0151%2012.0055C15.5771%2011.9247%2015.1274%2011.9326%2014.6925%2012.0287C14.2577%2012.1248%2013.8465%2012.307%2013.4833%2012.5647ZM22.3771%208.28975C22.0521%207.96475%2021.6583%207.7085%2021.2271%207.53975C20.0958%207.096%2017.6271%207.11475%2016.0333%207.1335C15.7771%207.1335%2015.5396%207.13975%2015.3333%207.13975C15.1271%207.13975%2014.8833%207.13975%2014.6208%207.1335C13.0271%207.11475%2010.5708%207.08975%209.43956%207.53975C9.00831%207.7085%208.62081%207.96475%208.28956%208.28975C7.95831%208.61475%207.70831%209.0085%207.53956%209.43975C7.09581%2010.571%207.12081%2013.046%207.13331%2014.6397C7.13331%2014.896%207.13956%2015.1335%207.13956%2015.3335C7.13956%2015.5335%207.13956%2015.771%207.13331%2016.0272C7.12081%2017.621%207.09581%2020.096%207.53956%2021.2272C7.70831%2021.6585%207.96456%2022.046%208.28956%2022.3772C8.61456%2022.7085%209.00831%2022.9585%209.43956%2023.1272C10.5708%2023.571%2013.0396%2023.5522%2014.6333%2023.5335C14.8896%2023.5335%2015.1271%2023.5272%2015.3333%2023.5272C15.5396%2023.5272%2015.7833%2023.5272%2016.0458%2023.5335C17.6396%2023.5522%2020.0958%2023.5772%2021.2271%2023.1272C21.6583%2022.9585%2022.0458%2022.7022%2022.3771%2022.3772C22.7083%2022.0522%2022.9583%2021.6585%2023.1271%2021.2272C23.5771%2020.1022%2023.5521%2017.6397%2023.5333%2016.0397C23.5333%2015.7772%2023.5271%2015.5335%2023.5271%2015.3272C23.5271%2015.121%2023.5271%2014.8835%2023.5333%2014.6147C23.5521%2013.021%2023.5771%2010.5585%2023.1271%209.42725C22.9583%208.996%2022.7021%208.6085%2022.3771%208.27725V8.28975ZM18.1833%2011.071C19.3146%2011.8272%2020.0958%2013.0022%2020.3646%2014.3335C20.6333%2015.6647%2020.3521%2017.0522%2019.5958%2018.1835C19.2208%2018.746%2018.7396%2019.221%2018.1833%2019.596C17.6271%2019.971%2016.9958%2020.2272%2016.3333%2020.3585C15.0021%2020.621%2013.6146%2020.346%2012.4833%2019.5897C11.3521%2018.8335%2010.5708%2017.6585%2010.3021%2016.3272C10.0333%2014.996%2010.3146%2013.6085%2011.0646%2012.4772C11.8146%2011.346%2012.9958%2010.5647%2014.3271%2010.296C15.6583%2010.0272%2017.0458%2010.3085%2018.1771%2011.0585H18.1833V11.071ZM20.0083%2010.9897C19.8146%2010.8585%2019.6583%2010.671%2019.5646%2010.4522C19.4708%2010.2335%2019.4521%209.996%2019.4958%209.7585C19.5396%209.521%2019.6583%209.31475%2019.8208%209.146C19.9833%208.97725%2020.2021%208.86475%2020.4333%208.821C20.6646%208.77725%2020.9083%208.796%2021.1271%208.88975C21.3458%208.9835%2021.5333%209.1335%2021.6646%209.32725C21.7958%209.521%2021.8646%209.75225%2021.8646%209.98975C21.8646%2010.146%2021.8333%2010.3022%2021.7771%2010.446C21.7208%2010.5897%2021.6271%2010.721%2021.5208%2010.8335C21.4146%2010.946%2021.2771%2011.0335%2021.1333%2011.096C20.9896%2011.1585%2020.8333%2011.1897%2020.6771%2011.1897C20.4396%2011.1897%2020.2083%2011.121%2020.0146%2010.9897H20.0083ZM29.3333%205.3335C29.3333%203.12725%2027.5396%201.3335%2025.3333%201.3335H5.33331C3.12706%201.3335%201.33331%203.12725%201.33331%205.3335V25.3335C1.33331%2027.5397%203.12706%2029.3335%205.33331%2029.3335H25.3333C27.5396%2029.3335%2029.3333%2027.5397%2029.3333%2025.3335V5.3335ZM23.6458%2023.646C22.4771%2024.8147%2021.0583%2025.1835%2019.4583%2025.2647C17.8083%2025.3585%2012.8583%2025.3585%2011.2083%2025.2647C9.60831%2025.1835%208.18956%2024.8147%207.02081%2023.646C5.85206%2022.4772%205.48331%2021.0585%205.40831%2019.4585C5.31456%2017.8085%205.31456%2012.8585%205.40831%2011.2085C5.48956%209.6085%205.85206%208.18975%207.02081%207.021C8.18956%205.85225%209.61456%205.4835%2011.2083%205.4085C12.8583%205.31475%2017.8083%205.31475%2019.4583%205.4085C21.0583%205.48975%2022.4771%205.85225%2023.6458%207.021C24.8146%208.18975%2025.1833%209.6085%2025.2583%2011.2085C25.3521%2012.8522%2025.3521%2017.796%2025.2583%2019.4522C25.1771%2021.0522%2024.8146%2022.471%2023.6458%2023.6397V23.646Z'%20fill='%23A08C6F'/%3e%3c/svg%3e" alt="IG"
+        /></a>
+        <a href="#"><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M5.33331%201.3335C3.12706%201.3335%201.33331%203.12725%201.33331%205.3335V25.3335C1.33331%2027.5397%203.12706%2029.3335%205.33331%2029.3335H11.4708V20.221H8.17081V15.3335H11.4708V13.2272C11.4708%207.7835%2013.9333%205.2585%2019.2833%205.2585C20.2958%205.2585%2022.0458%205.4585%2022.7646%205.6585V10.0835C22.3896%2010.046%2021.7333%2010.021%2020.9146%2010.021C18.2896%2010.021%2017.2771%2011.0147%2017.2771%2013.596V15.3335H22.5021L21.6021%2020.221H17.2708V29.3335H25.3333C27.5396%2029.3335%2029.3333%2027.5397%2029.3333%2025.3335V5.3335C29.3333%203.12725%2027.5396%201.3335%2025.3333%201.3335H5.33331Z'%20fill='%23A08C6F'/%3e%3c/svg%3e" alt="FB" /></a>
+        <a href="#"><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18.9583%2015.346L13.0083%2011.9647V18.7272L18.9583%2015.346ZM25.3333%201.3335H5.33331C3.12706%201.3335%201.33331%203.12725%201.33331%205.3335V25.3335C1.33331%2027.5397%203.12706%2029.3335%205.33331%2029.3335H25.3333C27.5396%2029.3335%2029.3333%2027.5397%2029.3333%2025.3335V5.3335C29.3333%203.12725%2027.5396%201.3335%2025.3333%201.3335ZM26.2333%209.83975C26.7083%2011.6272%2026.7083%2015.3522%2026.7083%2015.3522C26.7083%2015.3522%2026.7083%2019.0772%2026.2333%2020.8585C25.9708%2021.846%2025.2021%2022.5897%2024.2208%2022.8522C22.4521%2023.3335%2015.3333%2023.3335%2015.3333%2023.3335C15.3333%2023.3335%208.21456%2023.3335%206.44581%2022.8585C5.46456%2022.596%204.69581%2021.8522%204.43331%2020.8647C3.95831%2019.0772%203.95831%2015.3522%203.95831%2015.3522C3.95831%2015.3522%203.95831%2011.621%204.43331%209.83975C4.69581%208.85225%205.46456%208.07725%206.44581%207.81475C8.21456%207.3335%2015.3333%207.3335%2015.3333%207.3335C15.3333%207.3335%2022.4521%207.3335%2024.2208%207.81475C25.2021%208.07725%2025.9708%208.85225%2026.2333%209.83975Z'%20fill='%23A08C6F'/%3e%3c/svg%3e" alt="youtube" /></a>
+      </div>
+    </div>
+    <div class="d-flex align-items-center align-items-bottom justify-content-md-center justify-content-start pt-60">
+      <p class="fs-7 text-gray-400">2025© 驛站諮商所  All RIGHTS RESERVED.</p>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+
+  
+  </body>
+</html>
+
+
