@@ -387,10 +387,58 @@
 }
 
 // 側邊欄卡片
+// .doctor-sidebar-card {
+//   @media (max-width: 991.98px) {
+//     position: relative !important;
+//     top: 0 !important;
+//   }
+// }
+
+// 側邊欄卡片 - 固定在左側
 .doctor-sidebar-card {
+  position: sticky !important;
+  top: 100px !important; // 根據你的 header 高度調整
+  align-self: flex-start !important;
+  max-height: calc(100vh - 120px) !important;
+  overflow-y: auto !important;
+  
   @media (max-width: 991.98px) {
     position: relative !important;
     top: 0 !important;
+    max-height: none !important;
+  }
+}
+
+// ===== 預約頁面佈局（新增） =====
+.booking-page-layout,
+.doctor-detail-page > .container > .row {
+  display: flex !important;
+  gap: 2rem !important;
+  align-items: flex-start !important;
+  
+  // 左側醫師資訊
+  > div:first-child,
+  > .col-lg-4 {
+    flex: 0 0 320px !important;
+    max-width: 320px !important;
+  }
+  
+  // 右側預約內容
+  > div:last-child,
+  > .col-lg-8 {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  @media (max-width: 991.98px) {
+    flex-direction: column !important;
+    
+    > div:first-child,
+    > .col-lg-4 {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      margin-bottom: 2rem !important;
+    }
   }
 }
 
@@ -486,3 +534,4 @@
     }
   }
 }
+
